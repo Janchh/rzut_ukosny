@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class EulerMovementSimulation {
-
+    //
     // Vector field function
     public static double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
