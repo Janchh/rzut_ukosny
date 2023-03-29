@@ -32,64 +32,124 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-          <font>
-            <Font size="18.0" />
-          </font>
-        </Label>
-      </children>
-    </AnchorPane>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" text="START/STOP" />
+            <Button mnemonicParsing="false" text="Zapisz trajektorię" />
+            <Button mnemonicParsing="false" text="PL|EN" />
+        </buttons>
+      </ButtonBar>
+      <SplitPane dividerPositions="0.5845864661654134" prefHeight="565.0" prefWidth="640.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="106.0" layoutY="203.0" prefHeight="18.0" prefWidth="164.0" text="Ekren wyświetlania" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox prefHeight="436.0" prefWidth="262.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="153.0" text="Menu parametrów" />
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Prędkość początkowa" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Masa" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Przyspieszenie grawitacyjne" />
+                              <TextField prefHeight="26.0" prefWidth="44.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Współczynnik oporu powietrza" />
+                              <TextField prefHeight="26.0" prefWidth="50.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Prędkość wiatru" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="Kierunek wiatru" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="kierunek rzutu" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="okres obrotu planety" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="odległość od osi planety" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="30.0" prefWidth="227.0">
+                           <children>
+                              <Label text="odchylenie od poziomu" />
+                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                           </children>
+                        </HBox>
+                        <Label text="Wybór perpektywy" />
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="X" />
+                              <RadioButton mnemonicParsing="false" text="Y" GridPane.columnIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="Z" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="3D" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" text="All" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
   </children>
 </VBox>
