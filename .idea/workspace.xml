@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="pierwsze okno vol.2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rzut_ukosny/MainFrame.java" afterDir="false" />
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="okno główne">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rzut_ukosny/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rzut_ukosny/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rzut_ukosny/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rzut_ukosny/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rzut_ukosny/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rzut_ukosny/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rzut_ukosny/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +65,19 @@
   }
 }</component>
   <component name="RunManager" selected="Application.MainFrame">
+    <configuration name="EulerMovementSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rzut.EulerMovementSimulation" />
+      <module name="rzut_ukosny" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.rzut_ukosny.HelloApplication" />
       <module name="rzut_ukosny" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.rzut_ukosny.*" />
+          <option name="PATTERN" value="rzut.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,11 +86,11 @@
       </method>
     </configuration>
     <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.rzut_ukosny.MainFrame" />
+      <option name="MAIN_CLASS_NAME" value="rzut.MainFrame" />
       <module name="rzut_ukosny" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.rzut_ukosny.*" />
+          <option name="PATTERN" value="rzut.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,6 +101,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.EulerMovementSimulation" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -119,12 +129,27 @@
       <option name="project" value="LOCAL" />
       <updated>1679771142685</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="okno główne">
+      <created>1680080095376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680080095376</updated>
+    </task>
+    <task id="LOCAL-00004" summary="okno główne">
+      <created>1680080254039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680080254039</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pierwsze okno" />
     <MESSAGE value="pierwsze okno vol.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="pierwsze okno vol.2" />
+    <MESSAGE value="okno główne" />
+    <option name="LAST_COMMIT_MESSAGE" value="okno główne" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.example.rzut_ukosny;
+package rzut;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
