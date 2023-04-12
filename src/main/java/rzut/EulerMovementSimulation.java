@@ -5,10 +5,8 @@ import java.io.IOException;
 
 public class EulerMovementSimulation {
 
-    // Vector field function
     public static double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
-        // Define vector field equations here
         v[0] = x * y;
         v[1] = Math.cos(z*x);
         v[2] = Math.sin(y*y);
@@ -26,7 +24,6 @@ public class EulerMovementSimulation {
 
     public static void main(String[] args) throws IOException {
 
-        // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
         double stepSize = 0.1;
         int numSteps = 10000;
