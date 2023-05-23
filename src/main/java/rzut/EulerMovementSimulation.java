@@ -17,6 +17,7 @@ public class EulerMovementSimulation {
     double T = 0; //okres obrotu planety
     double r = 0; //odległośc od osi obrotu planety
     double phi = 0; //odchylenie od poziomu
+    int Num_steps = 0; //ilosc krokow symulacji
 
     public double getV0() {
         return v0;
@@ -97,6 +98,14 @@ public class EulerMovementSimulation {
     public void setPhi(double phi) {
         this.phi = phi;
     }
+    
+    public int getNum_steps(){
+        return Num_steps;    
+    }
+    
+    public void setNum_steps(double num_steps){
+        this.Num_steps = num_steps;
+    }
 
     public void wypisz(){
         System.out.println(v0);
@@ -129,7 +138,7 @@ public class EulerMovementSimulation {
         return newPos;
     }
 
-    /*public static void simulate(String[] args) throws IOException {
+    public static void simulate(String[] args) throws IOException {
 
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
