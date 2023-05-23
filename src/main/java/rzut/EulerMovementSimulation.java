@@ -17,7 +17,7 @@ public class EulerMovementSimulation {
     double T = 0; //okres obrotu planety
     double r = 0; //odległośc od osi obrotu planety
     double phi = 0; //odchylenie od poziomu
-    int Num_steps = 0; //ilosc krokow symulacji
+   // int Num_steps = 0; //ilosc krokow symulacji
 
     public double getV0() {
         return v0;
@@ -99,13 +99,13 @@ public class EulerMovementSimulation {
         this.phi = phi;
     }
     
-    public int getNum_steps(){
+/*    public int getNum_steps(){
         return Num_steps;    
     }
     
     public void setNum_steps(double num_steps){
         this.Num_steps = num_steps;
-    }
+    }*/
 
     public void wypisz(){
         System.out.println(v0);
@@ -123,9 +123,15 @@ public class EulerMovementSimulation {
     public static double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
         // Define vector field equations here
+        kW = getkW();
+        vK = getvK();
+        oP = getoP();
+        g = getG();
+        phi = getPhi();
+        v0 = getV0();
         v[0] = (Math.cos(kW)*vK)*Math.exp(-oP);
         v[1] = Math.sin(kW)*vK*Math.exp(-oP);
-        v[2] = -g*Math.exp(-oP);
+        v[2] = -g*Math.exp(-oP)+Math.sin(phi)*v0;
         return v;
     }
 
@@ -143,13 +149,13 @@ public class EulerMovementSimulation {
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
         double stepSize = 0.1;
-        int numSteps = 10000;
+     /*   int numSteps = getNum_steps();*/
         String fileName = "output.csv";
 
         FileWriter writer = new FileWriter(fileName);
         writer.append("x,y,z,t\n");
 
-        for (int i = 0; i < numSteps; i++) {
+        while (pos[2]>=0) {
             pos = eulerMethod(pos, stepSize, pos[3]);
             writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
