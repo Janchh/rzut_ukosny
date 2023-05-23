@@ -114,9 +114,9 @@ public class EulerMovementSimulation {
     public static double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
         // Define vector field equations here
-        v[0] = x * y;
-        v[1] = Math.cos(z*x);
-        v[2] = Math.sin(y*y);
+        v[0] = Math.cos(kW)*vK;
+        v[1] = Math.sin(kW)*vK;
+        v[2] = -g;
         return v;
     }
 
@@ -129,7 +129,7 @@ public class EulerMovementSimulation {
         return newPos;
     }
 
-    /*public static void main(String[] args) throws IOException {
+    /*public static void simulate(String[] args) throws IOException {
 
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
