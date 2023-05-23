@@ -114,9 +114,9 @@ public class EulerMovementSimulation {
     public static double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
         // Define vector field equations here
-        v[0] = Math.cos(kW)*vK;
-        v[1] = Math.sin(kW)*vK;
-        v[2] = -g;
+        v[0] = (Math.cos(kW)*vK)*Math.exp(-oP);
+        v[1] = Math.sin(kW)*vK*Math.exp(-oP);
+        v[2] = -g*Math.exp(-oP);
         return v;
     }
 
