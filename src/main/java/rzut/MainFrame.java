@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainFrame extends Application {
+
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainFrame.class.getResource("main-frame.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -16,7 +17,10 @@ public class MainFrame extends Application {
         stage.show();
     }
 
+
     public static void main(String[] args) {
         launch();
+
+
     }
 }

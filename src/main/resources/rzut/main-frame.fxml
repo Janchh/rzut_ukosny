@@ -38,6 +38,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -45,20 +46,20 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rzut.Controller">
   <children>
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button mnemonicParsing="false" text="START/STOP" />
-            <Button mnemonicParsing="false" text="Zapisz trajektorię" />
-            <Button mnemonicParsing="false" text="PL|EN" />
+          <Button mnemonicParsing="false" onAction="#start" text="START/STOP" />
+            <Button mnemonicParsing="false" onAction="#save" text="Zapisz trajektorię" />
+            <Button minWidth="65.0" mnemonicParsing="false" onAction="#plEn" prefHeight="26.0" text="PL|EN" />
         </buttons>
       </ButtonBar>
       <SplitPane dividerPositions="0.5845864661654134" prefHeight="565.0" prefWidth="640.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="106.0" layoutY="203.0" prefHeight="18.0" prefWidth="164.0" text="Ekren wyświetlania" />
+                  <Label layoutX="106.0" layoutY="203.0" prefHeight="18.0" prefWidth="164.0" text="Ekran wyświetlania" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -69,61 +70,61 @@
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Prędkość początkowa" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="vPocz" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Masa" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="mass" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Przyspieszenie grawitacyjne" />
-                              <TextField prefHeight="26.0" prefWidth="44.0" />
+                              <TextField fx:id="grav" prefHeight="26.0" prefWidth="44.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Współczynnik oporu powietrza" />
-                              <TextField prefHeight="26.0" prefWidth="50.0" />
+                              <TextField fx:id="res" prefHeight="26.0" prefWidth="50.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Prędkość wiatru" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="vwind" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="Kierunek wiatru" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="dwind" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="kierunek rzutu" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="dthrow" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="okres obrotu planety" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="tim" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="odległość od osi planety" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="radi" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="227.0">
                            <children>
                               <Label text="odchylenie od poziomu" />
-                              <TextField prefHeight="12.0" prefWidth="103.0" />
+                              <TextField fx:id="deg" prefHeight="12.0" prefWidth="103.0" text="0" />
                            </children>
                         </HBox>
                         <Label text="Wybór perpektywy" />
@@ -138,11 +139,14 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="X" />
-                              <RadioButton mnemonicParsing="false" text="Y" GridPane.columnIndex="1" />
-                              <RadioButton mnemonicParsing="false" text="Z" GridPane.rowIndex="1" />
-                              <RadioButton mnemonicParsing="false" text="3D" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <RadioButton mnemonicParsing="false" text="All" GridPane.rowIndex="2" />
+                              <RadioButton mnemonicParsing="false" onAction="#x" text="X">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupa" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton mnemonicParsing="false" onAction="#y" text="Y" toggleGroup="$grupa" GridPane.columnIndex="1" />
+                              <RadioButton mnemonicParsing="false" onAction="#z" text="Z" toggleGroup="$grupa" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" onAction="#td" text="3D" toggleGroup="$grupa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <RadioButton mnemonicParsing="false" onAction="#all" text="All" toggleGroup="$grupa" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                      </children>
