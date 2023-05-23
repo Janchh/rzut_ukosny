@@ -17,7 +17,7 @@ public class EulerMovementSimulation {
     double T = 0; //okres obrotu planety
     double r = 0; //odległośc od osi obrotu planety
     double phi = 0; //odchylenie od poziomu
-   // int Num_steps = 0; //ilosc krokow symulacji
+    // int Num_steps = 0; //ilosc krokow symulacji
 
     public double getV0() {
         return v0;
@@ -98,11 +98,11 @@ public class EulerMovementSimulation {
     public void setPhi(double phi) {
         this.phi = phi;
     }
-    
+
 /*    public int getNum_steps(){
-        return Num_steps;    
+        return Num_steps;
     }
-    
+
     public void setNum_steps(double num_steps){
         this.Num_steps = num_steps;
     }*/
@@ -120,22 +120,22 @@ public class EulerMovementSimulation {
     }
 
     // Vector field function
-    public static double[] vectorField(double x, double y, double z) {
+    public double[] vectorField(double x, double y, double z) {
         double[] v = new double[3];
         // Define vector field equations here
         kW = getkW();
-        vK = getvK();
+        vW = getvW();
         oP = getoP();
         g = getG();
         phi = getPhi();
         v0 = getV0();
-        v[0] = (Math.cos(kW)*vK)*Math.exp(-oP);
-        v[1] = Math.sin(kW)*vK*Math.exp(-oP);
+        v[0] = (Math.cos(kW)*vW)*Math.exp(-oP);
+        v[1] = Math.sin(kW)*vW*Math.exp(-oP);
         v[2] = -g*Math.exp(-oP)+Math.sin(phi)*v0;
         return v;
     }
 
-    public static double[] eulerMethod(double[] pos, double stepSize, double t) {
+    public double[] eulerMethod(double[] pos, double stepSize, double t) {
         double[] newPos = new double[4];
         newPos[0] = pos[0] + stepSize * vectorField(pos[0], pos[1], pos[2])[0];
         newPos[1] = pos[1] + stepSize * vectorField(pos[0], pos[1], pos[2])[1];
@@ -144,12 +144,12 @@ public class EulerMovementSimulation {
         return newPos;
     }
 
-    public static void simulate(String[] args) throws IOException {
+    public void simulate(String[] args) throws IOException {
 
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
         double stepSize = 0.1;
-     /*   int numSteps = getNum_steps();*/
+        /*   int numSteps = getNum_steps();*/
         String fileName = "output.csv";
 
         FileWriter writer = new FileWriter(fileName);
@@ -163,5 +163,5 @@ public class EulerMovementSimulation {
         writer.flush();
         writer.close();
 
-    }*/
+    }
 }
