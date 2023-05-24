@@ -153,6 +153,7 @@ public class EulerMovementSimulation {
         writer.append(oP+"\n");
         writer.append(vW+"\n");
         writer.append(kW+"\n");
+        writer.append(dt+"\n");
         writer.append(T+"\n");
         writer.append(r+"\n");
         writer.append(phi+"\n");

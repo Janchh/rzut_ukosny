@@ -19,7 +19,7 @@ public class MainFrame extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainFrame.class.getResource("main-frame.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Rzut ukośny");
-        stage.getIcons().add(new Image(MainFrame.class.getResourceAsStream("/com/logo.png")));
+        //stage.getIcons().add(new Image(MainFrame.class.getResourceAsStream("/com/logo.png")));
         stage.setScene(scene);
         stage.show();
     }

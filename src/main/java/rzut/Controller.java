@@ -65,6 +65,7 @@ public class Controller extends MainFrame{
     Label lb12;
     boolean lang = false;
     private Window stage;
+    FileChooser fileChooser = new FileChooser();;
 
     public void plEn(ActionEvent e){
         if(lang){
@@ -113,7 +114,6 @@ public class Controller extends MainFrame{
         System.out.println("obliczone");
     }
     public void save(ActionEvent e){
-        FileChooser fileChooser = new FileChooser();
         if(!lang){
             fileChooser.setTitle("Zapisz trajektorię");
         }else{
