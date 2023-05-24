@@ -5,8 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
-public class Controller {
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Controller extends MainFrame{
 
     @FXML
     TextField vPocz;
@@ -33,6 +39,8 @@ public class Controller {
     @FXML
     Button button2; //zmiana języka
     @FXML
+    Button otraj; //obliczanie trajektorii
+    @FXML
     Label lb1;
     @FXML
     Label lb2;
@@ -57,6 +65,8 @@ public class Controller {
     @FXML
     Label lb12;
     boolean lang = false;
+    private Window stage;
+
     public void plEn(ActionEvent e){
         if(lang){
             //zmiana na j. polski
@@ -70,6 +80,9 @@ public class Controller {
 
     }
     public void start(ActionEvent e){
+
+    }
+    public void oblicz(ActionEvent e){
         EulerMovementSimulation symulacja = new EulerMovementSimulation();
         symulacja.setV0(Double.parseDouble(vPocz.getText()));
         symulacja.setM(Double.parseDouble(mass.getText()));
@@ -82,9 +95,26 @@ public class Controller {
         symulacja.setR(Double.parseDouble(radi.getText()));
         symulacja.setPhi(Double.parseDouble(deg.getText()));
         symulacja.wypisz();
+        try {
+            symulacja.simulate();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
     public void save(ActionEvent e){
-        System.out.println("zapisz");
+        FileChooser fileChooser = new FileChooser();
+        if(!lang){
+            fileChooser.setTitle("Zapisz trajektorię");
+        }else{
+            fileChooser.setTitle("Save trajectory");
+        }
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            saveTextToFile("oko", file);
+        }
     }
     public void x(ActionEvent e){
         System.out.println("x");
@@ -105,6 +135,7 @@ public class Controller {
     public void pol(){
         button1.setText("Zapisz trajektorię");
         button2.setText("EN");
+        otraj.setText("Oblicz trajektorię");
         lb1.setText("Menu parametrów");
         lb2.setText("Prędkość początkowa");
         lb3.setText("Masa");
@@ -122,6 +153,7 @@ public class Controller {
     public void eng(){
         button1.setText("Save trajectory");
         button2.setText("PL");
+        otraj.setText("Calculate trajectory");
         lb1.setText("Menu of parameters");
         lb2.setText("Initial speed");
         lb3.setText("Mass");
@@ -134,5 +166,16 @@ public class Controller {
         lb10.setText("Distance from the axis of the planet");
         lb11.setText("Deviation from the level");
         lb12.setText("Perspective selection");
+    }
+
+    private void saveTextToFile(String content, File file) {
+        try {
+            PrintWriter writer;
+            writer = new PrintWriter(file);
+            writer.println(content);
+            writer.close();
+        } catch (IOException ex) {
+            System.out.println("błąd zapisu");
+        }
     }
 }

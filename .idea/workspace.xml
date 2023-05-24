@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="działające gui">
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="działająca zmiana wersji językowej">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684872537196</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="działająca zmiana wersji językowej">
+      <created>1684876238545</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684876238545</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +196,7 @@
     <MESSAGE value="okno główne vol.2" />
     <MESSAGE value="okno główne vol.3" />
     <MESSAGE value="działające gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="działające gui" />
+    <MESSAGE value="działająca zmiana wersji językowej" />
+    <option name="LAST_COMMIT_MESSAGE" value="działająca zmiana wersji językowej" />
   </component>
 </project>
