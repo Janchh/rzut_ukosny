@@ -146,9 +146,16 @@ public class EulerMovementSimulation {
         double stepSize = 0.01;
         /*   int numSteps = getNum_steps();*/
         String fileName = "output.csv";
-
         FileWriter writer = new FileWriter(fileName);
-        writer.append(v0 +"\n");
+        writer.append(v0+"\n");
+        writer.append(m+"\n");
+        writer.append(g+"\n");
+        writer.append(oP+"\n");
+        writer.append(vW+"\n");
+        writer.append(kW+"\n");
+        writer.append(T+"\n");
+        writer.append(r+"\n");
+        writer.append(phi+"\n");
         writer.append("x,y,z,t\n");
 
         while (pos[2]>=0) {
