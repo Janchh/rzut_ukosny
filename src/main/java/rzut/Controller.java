@@ -2,15 +2,14 @@ package rzut;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Controller extends MainFrame{
 
@@ -82,6 +81,17 @@ public class Controller extends MainFrame{
     public void start(ActionEvent e){
 
     }
+    public void help(ActionEvent e){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Tekst pomocy");
+        alert.setHeaderText("Informacje o programie znajdziesz pod linkiem");
+        alert.setContentText("Link do pomocy");
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                System.out.println("Pressed OK.");
+            }
+        });
+    }
     public void oblicz(ActionEvent e){
         EulerMovementSimulation symulacja = new EulerMovementSimulation();
         symulacja.setV0(Double.parseDouble(vPocz.getText()));
@@ -94,12 +104,13 @@ public class Controller extends MainFrame{
         symulacja.setT(Double.parseDouble(tim.getText()));
         symulacja.setR(Double.parseDouble(radi.getText()));
         symulacja.setPhi(Double.parseDouble(deg.getText()));
-        symulacja.wypisz();
+        //symulacja.wypisz();
         try {
             symulacja.simulate();
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
+        System.out.println("obliczone");
     }
     public void save(ActionEvent e){
         FileChooser fileChooser = new FileChooser();
@@ -109,11 +120,11 @@ public class Controller extends MainFrame{
             fileChooser.setTitle("Save trajectory");
         }
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+                new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
         File file = fileChooser.showSaveDialog(stage);
 
         if (file != null) {
-            saveTextToFile("oko", file);
+            saveTextToFile(file);
         }
     }
     public void x(ActionEvent e){
@@ -168,11 +179,16 @@ public class Controller extends MainFrame{
         lb12.setText("Perspective selection");
     }
 
-    private void saveTextToFile(String content, File file) {
+    private void saveTextToFile(File file) {
         try {
             PrintWriter writer;
             writer = new PrintWriter(file);
-            writer.println(content);
+            try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    writer.println(line);
+                }
+            }
             writer.close();
         } catch (IOException ex) {
             System.out.println("błąd zapisu");

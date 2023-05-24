@@ -121,20 +121,20 @@ public class EulerMovementSimulation {
     }
 
     // Vector field function
-    public static double[] vectorField(double x, double y, double z) {
+    public static double[] vectorField(double x, double y, double z, double t) {
         double[] v = new double[3];
         // Define vector field equations here
         v[0] = (Math.cos(kW)*vW)*Math.exp(-oP);
         v[1] = Math.sin(kW)*vW*Math.exp(-oP);
-        v[2] = -g*Math.exp(-oP)+Math.sin(phi)*v0;
+        v[2] = (-g*t+Math.sin(phi)*v0)*Math.exp(-oP);
         return v;
     }
 
     public double[] eulerMethod(double[] pos, double stepSize, double t) {
         double[] newPos = new double[4];
-        newPos[0] = pos[0] + stepSize * vectorField(pos[0], pos[1], pos[2])[0];
-        newPos[1] = pos[1] + stepSize * vectorField(pos[0], pos[1], pos[2])[1];
-        newPos[2] = pos[2] + stepSize * vectorField(pos[0], pos[1], pos[2])[2];
+        newPos[0] = pos[0] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[0];
+        newPos[1] = pos[1] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[1];
+        newPos[2] = pos[2] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[2];
         newPos[3] = t + stepSize;
         return newPos;
     }
@@ -143,16 +143,18 @@ public class EulerMovementSimulation {
 
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
-        double stepSize = 0.1;
+        double stepSize = 0.01;
         /*   int numSteps = getNum_steps();*/
         String fileName = "output.csv";
 
         FileWriter writer = new FileWriter(fileName);
+        writer.append(v0 +"\n");
         writer.append("x,y,z,t\n");
 
         while (pos[2]>=0) {
             pos = eulerMethod(pos, stepSize, pos[3]);
             writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
 
         writer.flush();

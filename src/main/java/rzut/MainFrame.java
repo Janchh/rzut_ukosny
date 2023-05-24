@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -18,6 +19,7 @@ public class MainFrame extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainFrame.class.getResource("main-frame.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Rzut ukośny");
+        stage.getIcons().add(new Image(MainFrame.class.getResourceAsStream("/com/logo.png")));
         stage.setScene(scene);
         stage.show();
     }
