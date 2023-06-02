@@ -65,6 +65,7 @@ public class Controller extends MainFrame{
     Label lb12;
     boolean lang = false;
     private Window stage;
+    FileChooser fileChooser = new FileChooser();;
 
     public void plEn(ActionEvent e){
         if(lang){
@@ -113,7 +114,6 @@ public class Controller extends MainFrame{
         System.out.println("obliczone");
     }
     public void save(ActionEvent e){
-        FileChooser fileChooser = new FileChooser();
         if(!lang){
             fileChooser.setTitle("Zapisz trajektorię");
         }else{
@@ -185,6 +185,16 @@ public class Controller extends MainFrame{
             writer = new PrintWriter(file);
             try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
                 String line;
+                String[] etykietyPl={"Prędkość początkowa", "Masa", "Przyspieszenie grawitacyjne", "Współczynnik oporu powietrza", "Prędkość wiatru", "Kierunek wiatru", "Kierunek rzutu", "Okres obrotu planety", "Odległość od osi planety", "Odchylenie od poziomu"};
+                String[] etykietyEn={"Initial speed", "Mass", "Gravitational acceleration", "Drag coefficient", "Wind speed", "Wind direction", "Throw direction", "The rotation period of the planet", "Distance from the axis of the planet", "Deviation from the level"};
+                for(int i = 0; i < 9; i++){
+                    line = br.readLine();
+                    if(!lang){
+                        writer.println(etykietyPl[i]+": "+line);
+                    }else{
+                        writer.println(etykietyEn[i]+": "+line);
+                    }
+                }
                 while ((line = br.readLine()) != null) {
                     writer.println(line);
                 }

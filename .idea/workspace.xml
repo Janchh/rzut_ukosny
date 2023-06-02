@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="obliczenia">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/logo.png" afterDir="false" />
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="zapis do pliku v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\janch\OneDrive - Politechnika Warszawska\Pulpit\Projekty\PO\rzut_ukosny\src\main\resources\com" />
       <recent name="C:\Users\janch\OneDrive - Politechnika Warszawska\Pulpit\Projekty\PO\rzut_ukosny\src\main\resources\rzut" />
     </key>
   </component>
@@ -183,7 +182,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684931378710</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="obliczenia">
+      <created>1684934924647</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684934924647</updated>
+    </task>
+    <task id="LOCAL-00011" summary="zapis do pliku v2">
+      <created>1684941249130</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684941249130</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +219,7 @@
     <MESSAGE value="działające gui" />
     <MESSAGE value="działająca zmiana wersji językowej" />
     <MESSAGE value="obliczenia" />
-    <option name="LAST_COMMIT_MESSAGE" value="obliczenia" />
+    <MESSAGE value="zapis do pliku v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="zapis do pliku v2" />
   </component>
 </project>
