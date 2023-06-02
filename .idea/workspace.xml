@@ -4,17 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="pierwsze okno">
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="obliczenia">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rzut_ukosny/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rzut_ukosny/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ea9d3829-e527-41c7-8788-b48d4cc6a8c8" />
+        <option name="url" value="https://github.com/Janchh/rzut_ukosny.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,13 +64,38 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\janch\OneDrive - Politechnika Warszawska\Pulpit\Projekty\PO\rzut_ukosny\src\main\resources\rzut" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainFrame">
+    <configuration name="EulerMovementSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rzut.EulerMovementSimulation" />
+      <module name="rzut_ukosny" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.rzut_ukosny.HelloApplication" />
       <module name="rzut_ukosny" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.rzut_ukosny.*" />
+          <option name="PATTERN" value="rzut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rzut.MainFrame" />
+      <module name="rzut_ukosny" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rzut.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -56,6 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.EulerMovementSimulation" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -76,11 +127,85 @@
       <option name="project" value="LOCAL" />
       <updated>1679745595767</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="pierwsze okno vol.2">
+      <created>1679771142685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679771142685</updated>
+    </task>
+    <task id="LOCAL-00003" summary="okno główne">
+      <created>1680080095376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680080095376</updated>
+    </task>
+    <task id="LOCAL-00004" summary="okno główne">
+      <created>1680080254039</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680080254039</updated>
+    </task>
+    <task id="LOCAL-00005" summary="okno główne vol.2">
+      <created>1680080760261</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680080760261</updated>
+    </task>
+    <task id="LOCAL-00006" summary="okno główne vol.3">
+      <created>1680082424948</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680082424948</updated>
+    </task>
+    <task id="LOCAL-00007" summary="działające gui">
+      <created>1684872537196</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684872537196</updated>
+    </task>
+    <task id="LOCAL-00008" summary="działająca zmiana wersji językowej">
+      <created>1684876238545</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684876238545</updated>
+    </task>
+    <task id="LOCAL-00009" summary="obliczenia">
+      <created>1684931378710</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684931378710</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pierwsze okno" />
-    <option name="LAST_COMMIT_MESSAGE" value="pierwsze okno" />
+    <MESSAGE value="pierwsze okno vol.2" />
+    <MESSAGE value="okno główne" />
+    <MESSAGE value="okno główne vol.2" />
+    <MESSAGE value="okno główne vol.3" />
+    <MESSAGE value="działające gui" />
+    <MESSAGE value="działająca zmiana wersji językowej" />
+    <MESSAGE value="obliczenia" />
+    <option name="LAST_COMMIT_MESSAGE" value="obliczenia" />
   </component>
 </project>
