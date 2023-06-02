@@ -2,7 +2,10 @@ package rzut;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
@@ -63,6 +66,8 @@ public class Controller extends MainFrame{
     Label lb11;
     @FXML
     Label lb12;
+    @FXML
+    Canvas can1;
     boolean lang = false;
     private Window stage;
     FileChooser fileChooser = new FileChooser();;
@@ -203,5 +208,11 @@ public class Controller extends MainFrame{
         } catch (IOException ex) {
             System.out.println("błąd zapisu");
         }
+    }
+
+    public void drawShapes() {
+        GraphicsContext gc = can1.getGraphicsContext2D();
+        gc.setFill(Color.BLUE);
+        gc.fillRect(0, 0, can1.getWidth(), can1.getHeight());
     }
 }
