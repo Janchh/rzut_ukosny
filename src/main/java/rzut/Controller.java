@@ -101,7 +101,7 @@ public class Controller extends MainFrame{
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if (lang == false){
         alert.setTitle("Pomoc");
-        alert.setHeaderText("Zaawansowany Symulator Rzutu Ukośnego GitHit200promax\nby Jan Chruśliński & Michał Ratajczyk @2023");
+        alert.setHeaderText("Zaawansowany Symulator Rzutu Ukośnego GitHit200promax\nby Jan Chruśliński & Michał Ratajczyk @2023\njan.chruslinski.stud at pw.edu.pl\nmichal.ratajczyk.stud at pw.edu.pl");
         alert.setContentText("Ten program pozwala symulować ruch ukośny. \n\n" +
                                 "Aby użyć programu, wykonaj następujące kroki: \n" +
                                 "1. Wprowadź prędkość początkową, masę i inne parametry w menu po prawej stronie.\n" +
@@ -116,7 +116,7 @@ public class Controller extends MainFrame{
         });}
         else{
         alert.setTitle("Help");
-        alert.setHeaderText("GitHit2000promax Advanced Trajectory Simulator\nby Ian Chruślińsky & Michael Ratajchyk @2023");
+        alert.setHeaderText("GitHit2000promax Advanced Trajectory Simulator\nby Ian Chruślińsky & Michael Ratajchyk @2023\njan.chruslinski.stud at pw.edu.pl\nmichal.ratajczyk.stud at pw.edu.pl");
         alert.setContentText("This program allows you to simulate projectile motion.\n\n" +
                 "To use the program, follow these steps:\n" +
                 "1. Enter the initial velocity, mass, and other parameters in the menu on the right.\n" +
