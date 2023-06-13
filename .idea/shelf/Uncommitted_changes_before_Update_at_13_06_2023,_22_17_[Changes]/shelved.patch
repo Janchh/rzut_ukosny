@@ -1,0 +1,250 @@
+Index: src/main/resources/rzut/main-frame.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<!--\n  Copyright (c) 2015, 2019, Gluon and/or its affiliates.\n  All rights reserved. Use is subject to license terms.\n\n  This file is available and licensed under the following license:\n\n  Redistribution and use in source and binary forms, with or without\n  modification, are permitted provided that the following conditions\n  are met:\n\n  - Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n  - Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the distribution.\n  - Neither the name of Oracle Corporation nor the names of its\n    contributors may be used to endorse or promote products derived\n    from this software without specific prior written permission.\n\n  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n  \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n-->\n\n<?import javafx.scene.control.Accordion?>\n<?import javafx.scene.control.Button?>\n<?import javafx.scene.control.ButtonBar?>\n<?import javafx.scene.control.Label?>\n<?import javafx.scene.control.RadioButton?>\n<?import javafx.scene.control.TextField?>\n<?import javafx.scene.control.ToggleGroup?>\n<?import javafx.scene.layout.AnchorPane?>\n<?import javafx.scene.layout.ColumnConstraints?>\n<?import javafx.scene.layout.GridPane?>\n<?import javafx.scene.layout.HBox?>\n<?import javafx.scene.layout.RowConstraints?>\n<?import javafx.scene.layout.VBox?>\n\n<VBox maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"454.0\" prefWidth=\"692.0\" xmlns=\"http://javafx.com/javafx/19\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"rzut.Controller\">\n  <children>\n      <ButtonBar nodeOrientation=\"RIGHT_TO_LEFT\" prefHeight=\"49.0\" prefWidth=\"623.0\">\n        <buttons>\n            <Button fx:id=\"button2\" minWidth=\"65.0\" mnemonicParsing=\"false\" onAction=\"#plEn\" prefHeight=\"26.0\" text=\"EN\" />\n          <Button mnemonicParsing=\"false\" onAction=\"#start\" text=\"START/STOP\" />\n            <Button fx:id=\"button1\" mnemonicParsing=\"false\" onAction=\"#save\" text=\"Zapisz trajektorię\" />\n            <Button fx:id=\"otraj\" mnemonicParsing=\"false\" onAction=\"#oblicz\" text=\"Oblicz trajektorię\" />\n            <Button fx:id=\"help\" mnemonicParsing=\"false\" onAction=\"#help\" text=\"?\" />\n        </buttons>\n      </ButtonBar>\n      <AnchorPane prefHeight=\"200.0\" prefWidth=\"200.0\">\n         <children>\n            <Label layoutX=\"94.0\" layoutY=\"183.0\" prefHeight=\"18.0\" prefWidth=\"164.0\" text=\"Ekran wyświetlania\" />\n            <VBox layoutX=\"357.0\" layoutY=\"-1.0\" prefHeight=\"403.0\" prefWidth=\"334.0\">\n               <children>\n                  <Label fx:id=\"lb1\" prefHeight=\"18.0\" prefWidth=\"153.0\" text=\"Menu parametrów\" />\n                  <GridPane alignment=\"CENTER\" prefHeight=\"247.0\" prefWidth=\"262.0\">\n                    <columnConstraints>\n                      <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                      <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                    </columnConstraints>\n                    <rowConstraints>\n                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                    </rowConstraints>\n                     <children>\n                        <Label fx:id=\"lb2\" text=\"Prędkość początkowa\" />\n                        <TextField fx:id=\"vPocz\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" />\n                        <Label fx:id=\"lb3\" text=\"Masa\" GridPane.rowIndex=\"1\" />\n                        <TextField fx:id=\"mass\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"1\" />\n                        <Label fx:id=\"lb4\" contentDisplay=\"CENTER\" graphicTextGap=\"7.0\" text=\"Przyspieszenie grawitacyjne\" GridPane.rowIndex=\"2\" />\n                        <TextField fx:id=\"grav\" prefHeight=\"26.0\" prefWidth=\"44.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"2\" />\n                        <Label fx:id=\"lb5\" text=\"Współczynnik oporu powietrza\" GridPane.rowIndex=\"3\" />\n                        <TextField fx:id=\"res\" prefHeight=\"26.0\" prefWidth=\"50.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"3\" />\n                        <Label fx:id=\"lb6\" text=\"Prędkość wiatru\" GridPane.rowIndex=\"4\" />\n                        <TextField fx:id=\"vwind\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"4\" />\n                        <Label fx:id=\"lb7\" text=\"Kierunek wiatru\" GridPane.rowIndex=\"5\" />\n                        <TextField fx:id=\"dwind\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"5\" />\n                        <Label fx:id=\"lb8\" text=\"Kierunek rzutu\" GridPane.rowIndex=\"6\" />\n                        <TextField fx:id=\"dthrow\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"6\" />\n                        <Label fx:id=\"lb9\" text=\"Okres obrotu planety\" GridPane.rowIndex=\"7\" />\n                        <TextField fx:id=\"tim\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"7\" />\n                        <Label fx:id=\"lb10\" text=\"Odległość od osi planety\" GridPane.rowIndex=\"8\" />\n                        <TextField fx:id=\"radi\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"8\" />\n                        <Label fx:id=\"lb11\" text=\"Odchylenie od poziomu\" GridPane.rowIndex=\"9\" />\n                        <TextField fx:id=\"deg\" prefHeight=\"12.0\" prefWidth=\"103.0\" text=\"0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"9\" />\n                     </children>\n                  </GridPane>\n                  <HBox prefHeight=\"30.0\" prefWidth=\"227.0\" />\n                  <Label fx:id=\"lb12\" text=\"Wybór perspektywy\" />\n                  <GridPane>\n                    <columnConstraints>\n                      <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                      <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\n                    </columnConstraints>\n                    <rowConstraints>\n                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\n                    </rowConstraints>\n                     <children>\n                        <RadioButton mnemonicParsing=\"false\" onAction=\"#x\" text=\"X\">\n                           <toggleGroup>\n                              <ToggleGroup fx:id=\"grupa\" />\n                           </toggleGroup>\n                        </RadioButton>\n                        <RadioButton mnemonicParsing=\"false\" onAction=\"#y\" text=\"Y\" toggleGroup=\"$grupa\" GridPane.columnIndex=\"1\" />\n                        <RadioButton mnemonicParsing=\"false\" onAction=\"#z\" text=\"Z\" toggleGroup=\"$grupa\" GridPane.rowIndex=\"1\" />\n                        <RadioButton mnemonicParsing=\"false\" onAction=\"#td\" text=\"3D\" toggleGroup=\"$grupa\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"1\" />\n                        <RadioButton mnemonicParsing=\"false\" onAction=\"#all\" selected=\"true\" text=\"All\" toggleGroup=\"$grupa\" GridPane.rowIndex=\"2\" />\n                     </children>\n                  </GridPane>\n               </children>\n            </VBox>\n         </children>\n      </AnchorPane>\n      <Accordion />\n  </children>\n</VBox>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/rzut/main-frame.fxml b/src/main/resources/rzut/main-frame.fxml
+--- a/src/main/resources/rzut/main-frame.fxml	(revision 0dd88de461a4954b9e665ea7e656e8030e8a092e)
++++ b/src/main/resources/rzut/main-frame.fxml	(date 1686667034798)
+@@ -57,13 +57,13 @@
+             <Button fx:id="help" mnemonicParsing="false" onAction="#help" text="?" />
+         </buttons>
+       </ButtonBar>
+-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
++      <AnchorPane prefHeight="200.0" prefWidth="200.0"  >
+          <children>
+             <Label layoutX="94.0" layoutY="183.0" prefHeight="18.0" prefWidth="164.0" text="Ekran wyświetlania" />
+             <VBox layoutX="357.0" layoutY="-1.0" prefHeight="403.0" prefWidth="334.0">
+                <children>
+                   <Label fx:id="lb1" prefHeight="18.0" prefWidth="153.0" text="Menu parametrów" />
+-                  <GridPane alignment="CENTER" prefHeight="247.0" prefWidth="262.0">
++                  <GridPane alignment="CENTER" prefHeight="247.0" prefWidth="262.0" >
+                     <columnConstraints>
+                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+Index: src/main/java/rzut/EulerMovementSimulation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rzut;\n\nimport java.io.FileWriter;\nimport java.io.IOException;\n\npublic class EulerMovementSimulation {\n\n\n    //pola\n    static double v0 = 0; //prędkość początkowa\n    double m = 0; //masa\n    static double g = 0; //przyspieszenie grawitacyjne\n    static double oP = 0; //opór powietrza\n    static double vW = 0; //prędkość wiatru\n    static double kW = 0; //kierunek wiatru\n    double dt = 0; //kierunek rzutu\n    double T = 0; //okres obrotu planety\n    double r = 0; //odległośc od osi obrotu planety\n    static double phi = 0; //odchylenie od poziomu\n   // int Num_steps = 0; //ilosc krokow symulacji\n    // int Num_steps = 0; //ilosc krokow symulacji\n\n    public double getV0() {\n        return v0;\n    }\n\n    public void setV0(double v0) {\n        this.v0 = v0;\n    }\n\n    public double getdt() {\n        return dt;\n    }\n\n    public void setdt(double dt) {\n        this.dt = dt;\n    }\n\n    public double getM() {\n        return m;\n    }\n\n    public void setM(double m) {\n        this.m = m;\n    }\n\n    public double getG() {\n        return g;\n    }\n\n    public void setG(double g) {\n        this.g = g;\n    }\n\n    public double getoP() {\n        return oP;\n    }\n\n    public void setoP(double oP) {\n        this.oP = oP;\n    }\n\n    public double getvW() {\n        return vW;\n    }\n\n    public void setvW(double vW) {\n        this.vW = vW;\n    }\n\n    public double getkW() {\n        return kW;\n    }\n\n    public void setkW(double kW) {\n        this.kW = kW;\n    }\n\n    public double getT() {\n        return T;\n    }\n\n    public void setT(double t) {\n        T = t;\n    }\n\n    public double getR() {\n        return r;\n    }\n\n    public void setR(double r) {\n        this.r = r;\n    }\n\n    public double getPhi() {\n        return phi;\n    }\n\n    public void setPhi(double phi) {\n        this.phi = phi;\n    }\n    \n/*    public int getNum_steps(){\n        return Num_steps;    \n    }\n    \n    public void setNum_steps(double num_steps){\n        this.Num_steps = num_steps;\n    }*/\n\n    public void wypisz(){\n        System.out.println(v0);\n        System.out.println(m);\n        System.out.println(g);\n        System.out.println(oP);\n        System.out.println(vW);\n        System.out.println(kW);\n        System.out.println(T);\n        System.out.println(r);\n        System.out.println(phi);\n    }\n\n    // Vector field function\n    public static double[] vectorField(double x, double y, double z, double t) {\n        double[] v = new double[3];\n        // Define vector field equations here\n        v[0] = (Math.cos(kW)*vW)*Math.exp(-oP);\n        v[1] = Math.sin(kW)*vW*Math.exp(-oP);\n        v[2] = (-g*t+Math.sin(phi)*v0)*Math.exp(-oP);\n        return v;\n    }\n\n    public double[] eulerMethod(double[] pos, double stepSize, double t) {\n        double[] newPos = new double[4];\n        newPos[0] = pos[0] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[0];\n        newPos[1] = pos[1] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[1];\n        newPos[2] = pos[2] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[2];\n        newPos[3] = t + stepSize;\n        return newPos;\n    }\n\n    public void simulate() throws IOException {\n\n        // Define simulation parameters\n        double[] pos = {0, 0, 0, 0};\n        double stepSize = 0.01;\n        /*   int numSteps = getNum_steps();*/\n        String fileName = \"output.csv\";\n        FileWriter writer = new FileWriter(fileName);\n        writer.append(v0+\"\\n\");\n        writer.append(m+\"\\n\");\n        writer.append(g+\"\\n\");\n        writer.append(oP+\"\\n\");\n        writer.append(vW+\"\\n\");\n        writer.append(kW+\"\\n\");\n        writer.append(dt+\"\\n\");\n        writer.append(T+\"\\n\");\n        writer.append(r+\"\\n\");\n        writer.append(phi+\"\\n\");\n        writer.append(\"x,y,z,t\\n\");\n\n        while (pos[2]>=0) {\n            pos = eulerMethod(pos, stepSize, pos[3]);\n            writer.append(pos[0] + \",\" + pos[1] + \",\" + pos[2] + \",\" + pos[3] + \"\\n\");\n            System.out.println(pos[0] + \",\" + pos[1] + \",\" + pos[2] + \",\" + pos[3] + \"\\n\");\n        }\n\n        writer.flush();\n        writer.close();\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/rzut/EulerMovementSimulation.java b/src/main/java/rzut/EulerMovementSimulation.java
+--- a/src/main/java/rzut/EulerMovementSimulation.java	(revision 0dd88de461a4954b9e665ea7e656e8030e8a092e)
++++ b/src/main/java/rzut/EulerMovementSimulation.java	(date 1685964766865)
+@@ -3,9 +3,18 @@
+ import java.io.FileWriter;
+ import java.io.IOException;
+ 
++import static java.lang.Math.pow;
++import static java.lang.Math.sqrt;
++
+ public class EulerMovementSimulation {
+-
+-
++    static double stepSize = 0.005;
++    static double px=0;
++    static double py=0;
++    static double pz=0;
++    static double vx=0;
++    static double vy=0;
++    static double vz=0;
++    static double t=0;
+     //pola
+     static double v0 = 0; //prędkość początkowa
+     double m = 0; //masa
+@@ -119,9 +128,34 @@
+         System.out.println(r);
+         System.out.println(phi);
+     }
++    public static double[] calculateForce(){
++        double[] F = new double[3];
++        double[] drag = new double[3];
++        // Define vector field equations here
++        drag[0] = 0.5 * oP*pow(vx,2);
++        drag[1] = 0.5 * oP*pow(vy,2);
++        drag[2] = 0.5 * oP*pow(vz,2);
++
++        F[0] = Math.cos(kW)*vW-drag[0];
++        F[1] = Math.sin(kW)*vW-drag[1];
++        F[2] = -g-drag[2];
++        System.out.println(drag[2]);
++        return F;
++    }
+ 
++    public static void updateVelocity(){
++        vx+= stepSize*calculateForce()[0];
++        vy+= stepSize*calculateForce()[1];
++        vz+= stepSize*calculateForce()[2];
++    }
++
++    public static void updatePosition(){
++        px += 0.5*pow(stepSize,2)*calculateForce()[0] + stepSize*vx;
++        py += 0.5*pow(stepSize,2)*calculateForce()[1] + stepSize*vy;
++        pz += 0.5*pow(stepSize,2)*calculateForce()[2] + stepSize*vz;
++    }
+     // Vector field function
+-    public static double[] vectorField(double x, double y, double z, double t) {
++    /*public static double[] vectorField(double x, double y, double z, double t) {
+         double[] v = new double[3];
+         // Define vector field equations here
+         v[0] = (Math.cos(kW)*vW)*Math.exp(-oP);
+@@ -137,17 +171,24 @@
+         newPos[2] = pos[2] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[2];
+         newPos[3] = t + stepSize;
+         return newPos;
+-    }
++    }*/
+ 
+     public void simulate() throws IOException {
+ 
+         // Define simulation parameters
+         double[] pos = {0, 0, 0, 0};
+-        double stepSize = 0.01;
++
++
++        vx=v0*Math.cos(phi);
++        vy=0;
++        vz=v0*Math.sin(phi);
++
++
++
+         /*   int numSteps = getNum_steps();*/
+         String fileName = "output.csv";
+         FileWriter writer = new FileWriter(fileName);
+-        writer.append(v0+"\n");
++        /*writer.append(v0+"\n");
+         writer.append(m+"\n");
+         writer.append(g+"\n");
+         writer.append(oP+"\n");
+@@ -156,17 +197,32 @@
+         writer.append(dt+"\n");
+         writer.append(T+"\n");
+         writer.append(r+"\n");
+-        writer.append(phi+"\n");
++        writer.append(phi+"\n");*/
+         writer.append("x,y,z,t\n");
+ 
+-        while (pos[2]>=0) {
+-            pos = eulerMethod(pos, stepSize, pos[3]);
++        while (pos[2]>=0  || (t<20*stepSize)) {
++            updateVelocity();
++            updatePosition();
++
++            pos[0]=px;
++            pos[1]=py;
++            pos[2]=pz;
++            pos[3]+=stepSize;
++            t+=stepSize;
+             writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+             System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+         }
+ 
+         writer.flush();
+         writer.close();
++        px=0;
++        py=0;
++        pz=0;
++        vx=0;
++        vy=0;
++        vz=0;
++        t=0;
++
+ 
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"67297910-1c5d-4d30-8af0-f794a9d25dc2\" name=\"Changes\" comment=\"zapis do pliku v2\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/rzut/Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/rzut/Controller.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/rzut/MainFrame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/rzut/MainFrame.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"ea9d3829-e527-41c7-8788-b48d4cc6a8c8\" />\n        <option name=\"url\" value=\"https://github.com/Janchh/rzut_ukosny.git\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2Mn0CQjmtLYKmoZkU4dofu9Vra7\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\janch\\OneDrive - Politechnika Warszawska\\Pulpit\\Projekty\\PO\\rzut_ukosny\\src\\main\\resources\\com\" />\n      <recent name=\"C:\\Users\\janch\\OneDrive - Politechnika Warszawska\\Pulpit\\Projekty\\PO\\rzut_ukosny\\src\\main\\resources\\rzut\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.MainFrame\">\n    <configuration name=\"EulerMovementSimulation\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"rzut.EulerMovementSimulation\" />\n      <module name=\"rzut_ukosny\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.rzut_ukosny.HelloApplication\" />\n      <module name=\"rzut_ukosny\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"rzut.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MainFrame\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"rzut.MainFrame\" />\n      <module name=\"rzut_ukosny\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"rzut.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.MainFrame\" />\n        <item itemvalue=\"Application.EulerMovementSimulation\" />\n        <item itemvalue=\"Application.HelloApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"67297910-1c5d-4d30-8af0-f794a9d25dc2\" name=\"Changes\" comment=\"\" />\n      <created>1678387914631</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678387914631</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"pierwsze okno\">\n      <created>1679745595767</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679745595767</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"pierwsze okno vol.2\">\n      <created>1679771142685</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679771142685</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"okno główne\">\n      <created>1680080095376</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680080095376</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"okno główne\">\n      <created>1680080254039</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680080254039</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"okno główne vol.2\">\n      <created>1680080760261</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680080760261</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"okno główne vol.3\">\n      <created>1680082424948</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680082424948</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"działające gui\">\n      <created>1684872537196</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1684872537196</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"działająca zmiana wersji językowej\">\n      <created>1684876238545</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1684876238545</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"obliczenia\">\n      <created>1684931378710</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1684931378710</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"obliczenia\">\n      <created>1684934924647</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1684934924647</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"zapis do pliku v2\">\n      <created>1684941249130</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1684941249130</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"12\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"pierwsze okno\" />\n    <MESSAGE value=\"pierwsze okno vol.2\" />\n    <MESSAGE value=\"okno główne\" />\n    <MESSAGE value=\"okno główne vol.2\" />\n    <MESSAGE value=\"okno główne vol.3\" />\n    <MESSAGE value=\"działające gui\" />\n    <MESSAGE value=\"działająca zmiana wersji językowej\" />\n    <MESSAGE value=\"obliczenia\" />\n    <MESSAGE value=\"zapis do pliku v2\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"zapis do pliku v2\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0dd88de461a4954b9e665ea7e656e8030e8a092e)
++++ b/.idea/workspace.xml	(date 1686687461938)
+@@ -4,11 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="zapis do pliku v2">
++    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="obliczenia">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -59,12 +58,17 @@
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny&quot;
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\janch\OneDrive - Politechnika Warszawska\Pulpit\Projekty\PO\rzut_ukosny\src\main\resources\com" />
+       <recent name="C:\Users\janch\OneDrive - Politechnika Warszawska\Pulpit\Projekty\PO\rzut_ukosny\src\main\resources\rzut" />
+     </key>
+   </component>
+@@ -118,6 +122,10 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1678387914631</updated>
++      <workItem from="1685699208166" duration="6267000" />
++      <workItem from="1686661377726" duration="1475000" />
++      <workItem from="1686666354443" duration="1280000" />
++      <workItem from="1686685933261" duration="601000" />
+     </task>
+     <task id="LOCAL-00001" summary="pierwsze okno">
+       <created>1679745595767</created>
+@@ -182,23 +190,12 @@
+       <option name="project" value="LOCAL" />
+       <updated>1684931378710</updated>
+     </task>
+-    <task id="LOCAL-00010" summary="obliczenia">
+-      <created>1684934924647</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1684934924647</updated>
+-    </task>
+-    <task id="LOCAL-00011" summary="zapis do pliku v2">
+-      <created>1684941249130</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1684941249130</updated>
+-    </task>
+-    <option name="localTasksCounter" value="12" />
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+       <map>
+@@ -219,7 +216,6 @@
+     <MESSAGE value="działające gui" />
+     <MESSAGE value="działająca zmiana wersji językowej" />
+     <MESSAGE value="obliczenia" />
+-    <MESSAGE value="zapis do pliku v2" />
+-    <option name="LAST_COMMIT_MESSAGE" value="zapis do pliku v2" />
++    <option name="LAST_COMMIT_MESSAGE" value="obliczenia" />
+   </component>
+ </project>
+\ No newline at end of file

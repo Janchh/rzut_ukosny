@@ -155,6 +155,8 @@ public class Controller extends MainFrame implements Runnable{
         symulacja.setT(Double.parseDouble(tim.getText()));
         symulacja.setR(Double.parseDouble(radi.getText()));
         symulacja.setPhi(Double.parseDouble(deg.getText()));
+        symulacja.setHight(Double.parseDouble(wys.getText()));
+
         //symulacja.wypisz();
         try {
             symulacja.simulate();
@@ -205,6 +207,7 @@ public class Controller extends MainFrame implements Runnable{
         lb10.setText("Odległość od osi planety");
         lb11.setText("Odchylenie od poziomu");
         lb12.setText("Wybór perspektywy");
+        lb13.setText("Wysokość początkowa");
     }
 
     public void eng(){
@@ -223,6 +226,7 @@ public class Controller extends MainFrame implements Runnable{
         lb10.setText("Distance from the axis of the planet");
         lb11.setText("Deviation from the level");
         lb12.setText("Perspective selection");
+        lb13.setText("Starting hight");
     }
 
     private void saveTextToFile(File file) {
@@ -241,7 +245,8 @@ public class Controller extends MainFrame implements Runnable{
                         "Kierunek rzutu",
                         "Okres obrotu planety",
                         "Odległość od osi planety",
-                        "Odchylenie od poziomu"};
+                        "Odchylenie od poziomu",
+                        "Wysokość początkowa"};
                 String[] etykietyEn={
                         "Initial speed",
                         "Mass",
@@ -252,8 +257,9 @@ public class Controller extends MainFrame implements Runnable{
                         "Throw direction",
                         "The rotation period of the planet",
                         "Distance from the axis of the planet",
-                        "Deviation from the level"};
-                for(int i = 0; i < 10; i++){
+                        "Deviation from the level",
+                        "Starting hight"};
+                for(int i = 0; i < 11; i++){
                     line = br.readLine();
                     if(!lang){
                         writer.println(etykietyPl[i]+": "+line);

@@ -9,6 +9,7 @@ public class EulerMovementSimulation {
     //pola
     static double v0 = 0; //prędkość początkowa
 
+    static double hight = 0;
     static double stepSize = 0.01;
     double m = 0; //masa
     static double g = 0; //przyspieszenie grawitacyjne
@@ -105,6 +106,14 @@ public class EulerMovementSimulation {
 
     public void setPhi(double phi) {
         this.phi = phi;
+    }
+
+    public double getHight(){
+        return hight;
+    }
+
+    public void setHight(double wys){
+        hight = wys;
     }
     
 /*    public int getNum_steps(){
@@ -254,7 +263,7 @@ public class EulerMovementSimulation {
         writer.append(r+"\n");
         writer.append(phi+"\n");
         writer.append("x,y,z,t\n");
-        z=10;
+        z=hight;
         while (pos[2]>=0) {
             pos[0] = x;
             pos[1] = y;
