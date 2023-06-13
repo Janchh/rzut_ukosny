@@ -76,7 +76,7 @@ public class Controller extends MainFrame implements Runnable{
     Label lb13;
     @FXML
     Canvas can1;
-    boolean lang = false;
+    public static boolean lang = false;
     private Window stage;
     int choose = 5;
     FileChooser fileChooser = new FileChooser();
@@ -90,6 +90,9 @@ public class Controller extends MainFrame implements Runnable{
     double maxz = 0;
     boolean czy = true;
 
+    public boolean getLang(){
+        return lang;
+    }
 
     public void plEn(ActionEvent e){
         if(lang){
@@ -102,6 +105,14 @@ public class Controller extends MainFrame implements Runnable{
             lang = true;
         }
 
+    }
+    public static boolean isDouble(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
     public void start(ActionEvent e){
         wczytaj();
@@ -143,9 +154,15 @@ public class Controller extends MainFrame implements Runnable{
             }
         });}
     }
-    public void oblicz(ActionEvent e){
+    public void oblicz(ActionEvent e) throws NotDoubleException{
         EulerMovementSimulation symulacja = new EulerMovementSimulation();
-        symulacja.setV0(Double.parseDouble(vPocz.getText()));
+
+        try {
+            symulacja.setV0(Double.parseDouble(vPocz.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }
+
         symulacja.setM(Double.parseDouble(mass.getText()));
         symulacja.setG(Double.parseDouble(grav.getText()));
         symulacja.setoP(Double.parseDouble(res.getText()));

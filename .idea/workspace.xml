@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia">
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka">
+      <change afterPath="$PROJECT_DIR$/src/main/java/rzut/NotDoubleException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686696230401</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka">
+      <created>1686696421864</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686696421864</updated>
+    </task>
+    <task id="LOCAL-00017" summary="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka">
+      <created>1686697076120</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686697076120</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,11 +276,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="41b21fb8-0c1e-4801-a7b7-e130b8d04167">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="41b21fb8-0c1e-4801-a7b7-e130b8d04167" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -283,6 +328,7 @@
     <MESSAGE value="działające wyświetlanie" />
     <MESSAGE value="helpbutton" />
     <MESSAGE value="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia" />
-    <option name="LAST_COMMIT_MESSAGE" value="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia" />
+    <MESSAGE value="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka" />
+    <option name="LAST_COMMIT_MESSAGE" value="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka" />
   </component>
 </project>
