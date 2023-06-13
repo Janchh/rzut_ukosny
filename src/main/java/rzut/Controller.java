@@ -162,17 +162,54 @@ public class Controller extends MainFrame implements Runnable{
         } catch (RuntimeException ex) {
             throw new NotDoubleException();
         }
+        try {
+            symulacja.setM(Double.parseDouble(mass.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }
+        try {
+            symulacja.setG(Double.parseDouble(grav.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
+            symulacja.setoP(Double.parseDouble(res.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
 
-        symulacja.setM(Double.parseDouble(mass.getText()));
-        symulacja.setG(Double.parseDouble(grav.getText()));
-        symulacja.setoP(Double.parseDouble(res.getText()));
-        symulacja.setvW(Double.parseDouble(vwind.getText()));
-        symulacja.setkW(Double.parseDouble(dwind.getText()));
-        symulacja.setdt(Double.parseDouble(dthrow.getText()));
-        symulacja.setT(Double.parseDouble(tim.getText()));
-        symulacja.setR(Double.parseDouble(radi.getText()));
-        symulacja.setPhi(Double.parseDouble(deg.getText()));
-        symulacja.setHight(Double.parseDouble(wys.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
+            symulacja.setvW(Double.parseDouble(vwind.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
+            symulacja.setkW(Double.parseDouble(dwind.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
+            symulacja.setdt(Double.parseDouble(dthrow.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }        try {
+            symulacja.setT(Double.parseDouble(tim.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }
+        try {
+            symulacja.setR(Double.parseDouble(radi.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }try {
+            symulacja.setPhi(Double.parseDouble(deg.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }try {
+            symulacja.setHight(Double.parseDouble(wys.getText()));
+        } catch (RuntimeException ex) {
+            throw new NotDoubleException();
+        }
+
 
         //symulacja.wypisz();
         try {
