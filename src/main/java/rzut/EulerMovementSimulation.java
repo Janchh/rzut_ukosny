@@ -265,6 +265,8 @@ public class EulerMovementSimulation {
         writer.append(hight+"\n");
         writer.append("x,y,z,t\n");
         z=hight;
+        pz = Math.cos(phi)*v0;
+
         while (pos[2]>=0) {
             pos[0] = x;
             pos[1] = y;
