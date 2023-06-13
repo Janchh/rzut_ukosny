@@ -175,9 +175,6 @@ public class Controller extends MainFrame{
     public void td(ActionEvent e){
         System.out.println("td");
     }
-    public void all(ActionEvent e){
-        System.out.println("all");
-    }
 
     public void pol(){
         button1.setText("Zapisz trajektorię");
