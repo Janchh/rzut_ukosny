@@ -99,14 +99,36 @@ public class Controller extends MainFrame{
     }
     public void help(ActionEvent e){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Tekst pomocy");
-        alert.setHeaderText("Informacje o programie znajdziesz pod linkiem");
-        alert.setContentText("Link do pomocy");
+        if (lang == false){
+        alert.setTitle("Pomoc");
+        alert.setHeaderText("Zaawansowany Symulator Rzutu Ukośnego GitHit200promax\nby Jan Chruśliński & Michał Ratajczyk @2023");
+        alert.setContentText("Ten program pozwala symulować ruch ukośny. \n\n" +
+                                "Aby użyć programu, wykonaj następujące kroki: \n" +
+                                "1. Wprowadź prędkość początkową, masę i inne parametry w menu po prawej stronie.\n" +
+                                "2. Kliknij przycisk 'START/STOP', aby wystrzelić lub zatrzymać pocisk.\n" +
+                                "3. Użyj przycisku 'Zapisz trajektorię', aby zapisać trajektorię do pliku csv.\n" +
+                                "4. Dostosuj perspektywę za pomocą przycisków 'X', 'Y', 'Z', '3D'.\n" +
+                                "Aby uzyskać dodatkową pomoc, zapoznaj się z dokumentacją programu lub skontaktuj się z twórcami.");
         alert.showAndWait().ifPresent(rs -> {
             if (rs == ButtonType.OK) {
                 System.out.println("Pressed OK.");
             }
-        });
+        });}
+        else{
+        alert.setTitle("Help");
+        alert.setHeaderText("GitHit2000promax Advanced Trajectory Simulator\nby Ian Chruślińsky & Michael Ratajchyk @2023");
+        alert.setContentText("This program allows you to simulate projectile motion.\n\n" +
+                "To use the program, follow these steps:\n" +
+                "1. Enter the initial velocity, mass, and other parameters in the menu on the right.\n" +
+                "2. Click the 'START/STOP' button to launch or stop the projectile.\n" +
+                "3. Use the 'Save trajectory' button to save the trajectory to a csv file.\n" +
+                "4. Adjust the perspective using the 'X', 'Y', 'Z', '3D' buttons.\n\n" +
+                "For additional assistance, refer to the program's documentation or contact the creators.");
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                System.out.println("Pressed OK.");
+            }
+        });}
     }
     public void oblicz(ActionEvent e){
         EulerMovementSimulation symulacja = new EulerMovementSimulation();
