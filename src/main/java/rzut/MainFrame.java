@@ -37,7 +37,7 @@ public class MainFrame extends Application {
     public void stop(){
         File f = new File("output.csv");
         f.delete();
-        System.out.println("kasuj");
+        System.exit(0);
     }
 
 

@@ -107,7 +107,7 @@
                                 <Label fx:id="lb11" text="Odchylenie od poziomu" GridPane.rowIndex="9" />
                                 <TextField fx:id="deg" prefHeight="12.0" prefWidth="103.0" text="0.5" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label fx:id="lb13" text="Wysokość początkowa" GridPane.rowIndex="10" />
-                        <TextField fx:id="wys" text="0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="wys" text="1" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                             </children>
                         </GridPane>
                         <Label fx:id="lb12" text="Wybór perspektywy" />

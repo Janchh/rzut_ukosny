@@ -88,7 +88,7 @@ public class Controller extends MainFrame implements Runnable{
     double maxx = 0;
     double maxy = 0;
     double maxz = 0;
-    boolean czy = true;
+    boolean czy = false;
 
 
     public void plEn(ActionEvent e){
@@ -276,19 +276,16 @@ public class Controller extends MainFrame implements Runnable{
             System.out.println("błąd zapisu");
         }
     }
-
     public void drawShapes(int i) {
         GraphicsContext gc = can1.getGraphicsContext2D();
         int h = (int) can1.getHeight();
         int w = (int) can1.getWidth();
-        gc.setFill(Color.web("#f10d0d"));
-        gc.fillRect(0, 0, w, h);
+        //gc.fillRect(0, 0, w, h);
         gc.setFill(Color.BLUE);
-        int l = x.size();
         if(choose == 0){
             double res1 = w / maxy;
             double res2 = h / maxz;
-            gc.fillOval(res1 * y.get(i), h-res2 * z.get(i), 2, 2);
+            gc.fillOval(res1 * y.get(i), h-res2 * z.get(i), 4, 4);
         }
         if(choose == 1){
             double res1 = w / maxx;
@@ -309,7 +306,7 @@ public class Controller extends MainFrame implements Runnable{
 
             try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
                 String line;
-                for(int i = 0; i < 11; i++){
+                for(int i = 0; i < 12; i++){
                     line = br.readLine();
                 }
                 double tmp;
@@ -349,7 +346,7 @@ public class Controller extends MainFrame implements Runnable{
             drawShapes(i);
             System.out.println(i);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
