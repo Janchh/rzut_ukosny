@@ -1,9 +1,13 @@
 package rzut;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class EulerMovementSimulation {
+
 
 
     //pola

@@ -115,11 +115,18 @@ public class Controller extends MainFrame implements Runnable{
         }
     }
     public void start(ActionEvent e){
-        wczytaj();
-        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
-        ExecutorService exec = Executors.newFixedThreadPool(2);
-        exec.execute(this::run);
-        exec.shutdown();
+                if(!czy){
+                    czy = true;
+                    wczytaj();
+                    final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
+                    ExecutorService exec = Executors.newFixedThreadPool(2);
+                    exec.execute(this::run);
+                    exec.shutdown();
+                }
+                else{
+                    czy = false;
+                }
+
     }
     public void help(ActionEvent e){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -334,7 +341,8 @@ public class Controller extends MainFrame implements Runnable{
         GraphicsContext gc = can1.getGraphicsContext2D();
         int h = (int) can1.getHeight();
         int w = (int) can1.getWidth();
-        //gc.fillRect(0, 0, w, h);
+        gc.setFill(Color.web("#c8c8c8"));
+        gc.fillRect(0, 0, w, h);
         gc.setFill(Color.BLUE);
         if(choose == 0){
             double res1 = w / maxy;
@@ -344,12 +352,12 @@ public class Controller extends MainFrame implements Runnable{
         if(choose == 1){
             double res1 = w / maxx;
             double res2 = h / maxz;
-            gc.fillOval(res1 * x.get(i), h-res2 * z.get(i), 2, 2);
+            gc.fillOval(res1 * x.get(i), h-res2 * z.get(i), 4, 4);
         }
         if(choose == 2){
             double res1 = w / maxx;
             double res2 = h / maxy;
-            gc.fillOval(res1 * x.get(i), h-res2 * y.get(i), 2, 2);
+            gc.fillOval(res1 * x.get(i), h-res2 * y.get(i), 4, 4);
         }
         if(choose == 3){
             System.out.println("3D");
@@ -397,14 +405,17 @@ public class Controller extends MainFrame implements Runnable{
     public void run(){
         int l = x.size();
         for (int i = 0; i < l; i++) {
+            if(!czy){
+                break;
+            }
             drawShapes(i);
-            System.out.println(i);
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+        czy = false;
     }
 
 
