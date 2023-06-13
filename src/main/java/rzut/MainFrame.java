@@ -1,6 +1,7 @@
 package rzut;
 
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -28,7 +29,10 @@ public class MainFrame extends Application {
         Controller controller = fxmlLoader.getController();
         //controller.drawShapes();
 
+
     }
+
+
 
     public void stop(){
         File f = new File("output.csv");

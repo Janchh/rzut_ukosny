@@ -265,7 +265,7 @@ public class EulerMovementSimulation {
             updatePosition();
             t+=stepSize;
             writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
-            System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            //System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
 
         writer.flush();

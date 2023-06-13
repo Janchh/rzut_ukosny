@@ -13,9 +13,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 
-public class Controller extends MainFrame{
+public class Controller extends MainFrame implements Runnable{
 
     @FXML
     TextField vPocz;
@@ -37,6 +40,8 @@ public class Controller extends MainFrame{
     TextField radi;
     @FXML
     TextField deg;
+    @FXML
+    TextField wys;
     @FXML
     Button button1; //zapisanie trajektorii
     @FXML
@@ -68,9 +73,12 @@ public class Controller extends MainFrame{
     @FXML
     Label lb12;
     @FXML
+    Label lb13;
+    @FXML
     Canvas can1;
     boolean lang = false;
     private Window stage;
+    int choose = 5;
     FileChooser fileChooser = new FileChooser();
 
     ArrayList<Double> x = new ArrayList<Double>();
@@ -80,6 +88,8 @@ public class Controller extends MainFrame{
     double maxx = 0;
     double maxy = 0;
     double maxz = 0;
+    boolean czy = true;
+
 
     public void plEn(ActionEvent e){
         if(lang){
@@ -95,7 +105,10 @@ public class Controller extends MainFrame{
     }
     public void start(ActionEvent e){
         wczytaj();
-        drawShapes();
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
+        ExecutorService exec = Executors.newFixedThreadPool(2);
+        exec.execute(this::run);
+        exec.shutdown();
     }
     public void help(ActionEvent e){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -164,16 +177,16 @@ public class Controller extends MainFrame{
         }
     }
     public void x(ActionEvent e){
-        System.out.println("x");
+        choose = 0;
     }
     public void y(ActionEvent e){
-        System.out.println("y");
+        choose = 1;
     }
     public void z(ActionEvent e){
-        System.out.println("z");
+        choose = 2;
     }
     public void td(ActionEvent e){
-        System.out.println("td");
+        choose = 3;
     }
 
     public void pol(){
@@ -258,16 +271,31 @@ public class Controller extends MainFrame{
         }
     }
 
-    public void drawShapes() {
+    public void drawShapes(int i) {
         GraphicsContext gc = can1.getGraphicsContext2D();
         int h = (int) can1.getHeight();
         int w = (int) can1.getWidth();
+        gc.setFill(Color.web("#f10d0d"));
+        gc.fillRect(0, 0, w, h);
         gc.setFill(Color.BLUE);
         int l = x.size();
-        double resX = w / maxx;
-        double resY = h / maxy;
-        for (int i = 0; i < l; i++){
-            gc.fillOval(resX * x.get(i), resY * y.get(i), 2, 2);
+        if(choose == 0){
+            double res1 = w / maxy;
+            double res2 = h / maxz;
+            gc.fillOval(res1 * y.get(i), h-res2 * z.get(i), 2, 2);
+        }
+        if(choose == 1){
+            double res1 = w / maxx;
+            double res2 = h / maxz;
+            gc.fillOval(res1 * x.get(i), h-res2 * z.get(i), 2, 2);
+        }
+        if(choose == 2){
+            double res1 = w / maxx;
+            double res2 = h / maxy;
+            gc.fillOval(res1 * x.get(i), h-res2 * y.get(i), 2, 2);
+        }
+        if(choose == 3){
+            System.out.println("3D");
         }
     }
 
@@ -296,7 +324,7 @@ public class Controller extends MainFrame{
                 }
             }
          catch (IOException ex) {
-            System.out.println("błąd zapisu");
+            System.out.println("błąd odczytu");
         }
     }
 
@@ -308,4 +336,19 @@ public class Controller extends MainFrame{
             return maxx;
         }
     }
+
+    public void run(){
+        int l = x.size();
+        for (int i = 0; i < l; i++) {
+            drawShapes(i);
+            System.out.println(i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
 }
