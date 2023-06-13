@@ -26,11 +26,15 @@ public class MainFrame extends Application {
         stage.setScene(scene);
         stage.show();
         Controller controller = fxmlLoader.getController();
-        controller.drawShapes();
+        //controller.drawShapes();
 
     }
 
-
+    public void stop(){
+        File f = new File("output.csv");
+        f.delete();
+        System.out.println("kasuj");
+    }
 
 
     public static void main(String[] args) {

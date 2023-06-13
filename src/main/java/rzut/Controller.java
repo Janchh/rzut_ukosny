@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class Controller extends MainFrame{
 
     @FXML
@@ -70,7 +71,15 @@ public class Controller extends MainFrame{
     Canvas can1;
     boolean lang = false;
     private Window stage;
-    FileChooser fileChooser = new FileChooser();;
+    FileChooser fileChooser = new FileChooser();
+
+    ArrayList<Double> x = new ArrayList<Double>();
+    ArrayList<Double> y = new ArrayList<Double>();
+    ArrayList<Double> z = new ArrayList<Double>();
+    ArrayList<Double> t = new ArrayList<Double>();
+    double maxx = 0;
+    double maxy = 0;
+    double maxz = 0;
 
     public void plEn(ActionEvent e){
         if(lang){
@@ -85,7 +94,8 @@ public class Controller extends MainFrame{
 
     }
     public void start(ActionEvent e){
-
+        wczytaj();
+        drawShapes();
     }
     public void help(ActionEvent e){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -116,7 +126,6 @@ public class Controller extends MainFrame{
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-        System.out.println("obliczone");
     }
     public void save(ActionEvent e){
         if(!lang){
@@ -190,9 +199,29 @@ public class Controller extends MainFrame{
             writer = new PrintWriter(file);
             try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
                 String line;
-                String[] etykietyPl={"Prędkość początkowa", "Masa", "Przyspieszenie grawitacyjne", "Współczynnik oporu powietrza", "Prędkość wiatru", "Kierunek wiatru", "Kierunek rzutu", "Okres obrotu planety", "Odległość od osi planety", "Odchylenie od poziomu"};
-                String[] etykietyEn={"Initial speed", "Mass", "Gravitational acceleration", "Drag coefficient", "Wind speed", "Wind direction", "Throw direction", "The rotation period of the planet", "Distance from the axis of the planet", "Deviation from the level"};
-                for(int i = 0; i < 9; i++){
+                String[] etykietyPl={
+                        "Prędkość początkowa",
+                        "Masa",
+                        "Przyspieszenie grawitacyjne",
+                        "Współczynnik oporu powietrza",
+                        "Prędkość wiatru",
+                        "Kierunek wiatru",
+                        "Kierunek rzutu",
+                        "Okres obrotu planety",
+                        "Odległość od osi planety",
+                        "Odchylenie od poziomu"};
+                String[] etykietyEn={
+                        "Initial speed",
+                        "Mass",
+                        "Gravitational acceleration",
+                        "Drag coefficient",
+                        "Wind speed",
+                        "Wind direction",
+                        "Throw direction",
+                        "The rotation period of the planet",
+                        "Distance from the axis of the planet",
+                        "Deviation from the level"};
+                for(int i = 0; i < 10; i++){
                     line = br.readLine();
                     if(!lang){
                         writer.println(etykietyPl[i]+": "+line);
@@ -212,7 +241,52 @@ public class Controller extends MainFrame{
 
     public void drawShapes() {
         GraphicsContext gc = can1.getGraphicsContext2D();
+        int h = (int) can1.getHeight();
+        int w = (int) can1.getWidth();
         gc.setFill(Color.BLUE);
-        gc.fillRect(0, 0, can1.getWidth(), can1.getHeight());
+        int l = x.size();
+        double resX = w / maxx;
+        double resY = h / maxy;
+        for (int i = 0; i < l; i++){
+            gc.fillOval(resX * x.get(i), resY * y.get(i), 2, 2);
+        }
+    }
+
+    public void wczytaj(){
+
+            try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
+                String line;
+                for(int i = 0; i < 11; i++){
+                    line = br.readLine();
+                }
+                double tmp;
+
+                while ((line = br.readLine()) != null) {
+                    String[] val = line.split(",");
+                    tmp = Double.valueOf(val[0]);
+                    x.add(tmp);
+                    maxx = max(tmp, maxx);
+                    tmp = Double.valueOf(val[1]);
+                    y.add(tmp);
+                    maxy = max(tmp, maxy);
+                    tmp = Double.valueOf(val[2]);
+                    z.add(tmp);
+                    maxz = max(tmp, maxz);
+                    tmp = Double.valueOf(val[3]);
+                    t.add(tmp);
+                }
+            }
+         catch (IOException ex) {
+            System.out.println("błąd zapisu");
+        }
+    }
+
+    private double max(double tmp, double maxx) {
+        if(tmp > maxx){
+            return tmp;
+        }
+        else{
+            return maxx;
+        }
     }
 }

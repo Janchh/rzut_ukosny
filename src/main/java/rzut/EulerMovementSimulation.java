@@ -158,15 +158,19 @@ public class EulerMovementSimulation {
         writer.append(r+"\n");
         writer.append(phi+"\n");
         writer.append("x,y,z,t\n");
-
+        int ilo = 0;
         while (pos[2]>=0) {
+            ilo += 1;
             pos = eulerMethod(pos, stepSize, pos[3]);
-            writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
-            System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            if(ilo % 2 == 0){
+                writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            }
+            //.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
 
         writer.flush();
         writer.close();
+        //System.out.println("koniec");
 
     }
 }
