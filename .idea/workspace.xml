@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="działające wyświetlanie">
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="wyświetlanie cd.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Rysowanie.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,7 +60,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny"
+    "last_opened_file_path": "C:/Users/janch/OneDrive - Politechnika Warszawska/Pulpit/Projekty/PO/rzut_ukosny",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -226,15 +229,29 @@
       <option name="project" value="LOCAL" />
       <updated>1685705956074</updated>
     </task>
-    <task id="LOCAL-00014" summary="działające wyświetlanie">
-      <created>1686679637413</created>
+    <task id="LOCAL-00014" summary="helpbutton">
+      <created>1686689761612</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1686679637413</updated>
+      <updated>1686689761612</updated>
     </task>
     <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -259,6 +276,7 @@
     <MESSAGE value="zapis do pliku v2" />
     <MESSAGE value="wyjęcie fileChooser'a z funkcji" />
     <MESSAGE value="działające wyświetlanie" />
-    <option name="LAST_COMMIT_MESSAGE" value="działające wyświetlanie" />
+    <MESSAGE value="helpbutton" />
+    <option name="LAST_COMMIT_MESSAGE" value="helpbutton" />
   </component>
 </project>
