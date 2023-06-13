@@ -8,15 +8,22 @@ public class EulerMovementSimulation {
 
     //pola
     static double v0 = 0; //prędkość początkowa
+
+    static double stepSize = 0.01;
     double m = 0; //masa
     static double g = 0; //przyspieszenie grawitacyjne
     static double oP = 0; //opór powietrza
     static double vW = 0; //prędkość wiatru
     static double kW = 0; //kierunek wiatru
     double dt = 0; //kierunek rzutu
-    double T = 0; //okres obrotu planety
-    double r = 0; //odległośc od osi obrotu planety
+    static double T = 0; //okres obrotu planety
+    static double r = 0; //odległośc od osi obrotu planety
     static double phi = 0; //odchylenie od poziomu
+
+    static double x, y, z, px, py, pz, t;
+
+
+
    // int Num_steps = 0; //ilosc krokow symulacji
     // int Num_steps = 0; //ilosc krokow symulacji
 
@@ -120,8 +127,97 @@ public class EulerMovementSimulation {
         System.out.println(phi);
     }
 
+    public static void updateMomentum(){
+        double[] vecV = new double[3];
+        vecV[0] = px;
+        vecV[1] = py;
+        vecV[2] = pz;
+        double[] omega = new double[3];
+        omega[0] = T*Math.sin(r);
+        omega[1] = T*Math.cos(r);
+        omega[2] = 0;
+        double[] cross = new double[3];
+        cross[0] = (-2)*(omega[1]*vecV[2]-vecV[1]*omega[2]);
+        cross[1] = (-2)*(omega[2]*vecV[0]-vecV[2]*omega[0]);
+        cross[2] = (-2)*(omega[0]*vecV[1]-vecV[0]*omega[1]);
+
+        px += vW * Math.cos(kW)*stepSize +cross[0]*stepSize;
+        py += vW * Math.sin(kW)*stepSize +cross[1]*stepSize;
+        pz += -g*stepSize+cross[2]*stepSize;
+
+        if (px>=0){
+            px -= oP*px*px*stepSize;
+        }
+        else{
+            px += oP*px*px*stepSize;
+        }
+
+        if(py>=0){
+            py -= oP*py*py*stepSize;
+        }
+        else{
+            py += oP*py*py*stepSize;
+        }
+        if(pz>=0){
+            pz -= oP*pz*pz*stepSize;
+        }
+        else {
+            pz += oP * pz * pz * stepSize;
+        }
+        //static double oP = 0; //opór powietrza
+        //static double vW = 0; //prędkość wiatru
+        //static double kW = 0; //kierunek wiatru
+
+    }
+
+    public static double[] determineForce(){
+        double[] vecV = new double[3];
+        vecV[0] = px;
+        vecV[1] = py;
+        vecV[2] = pz;
+        double[] omega = new double[3];
+        omega[0] = T*Math.sin(r);
+        omega[1] = T*Math.cos(r);
+        omega[2] = 0;
+        double[] F = new double[3];
+        F[0] = (-2)*(omega[1]*vecV[2]-vecV[1]*omega[2]);
+        F[1] = (-2)*(omega[2]*vecV[0]-vecV[2]*omega[0]);
+        F[2] = (-2)*(omega[0]*vecV[1]-vecV[0]*omega[1]);
+
+        F[0] += vW * Math.cos(kW)*stepSize;
+        F[1] += vW * Math.sin(kW)*stepSize;
+        F[2] += -g;
+
+        if (px>=0){
+            F[0] -= oP*px*px;
+        }
+        else{
+            F[0] += oP*px*px;
+        }
+
+        if(py>=0){
+            F[1] -= oP*py*py;
+        }
+        else{
+            F[1] += oP*py*py;
+        }
+        if(pz>=0){
+            F[2] -= oP*pz*pz;
+        }
+        else {
+            F[2] += oP * pz * pz;
+        }
+
+        return F;
+    }
+    public static void updatePosition() {
+        double[] Force = determineForce();
+        x += px * stepSize + 0.5 * Force[0] * stepSize * stepSize;
+        y += py * stepSize + 0.5 * Force[1] * stepSize * stepSize;
+        z += pz * stepSize + 0.5 * Force[2] * stepSize * stepSize;
+    }
     // Vector field function
-    public static double[] vectorField(double x, double y, double z, double t) {
+    /*public static double[] vectorField(double x, double y, double z, double t) {
         double[] v = new double[3];
         // Define vector field equations here
         v[0] = (Math.cos(kW)*vW)*Math.exp(-oP);
@@ -137,7 +233,7 @@ public class EulerMovementSimulation {
         newPos[2] = pos[2] + stepSize * vectorField(pos[0], pos[1], pos[2], pos[3])[2];
         newPos[3] = t + stepSize;
         return newPos;
-    }
+    }*/
 
     public void simulate() throws IOException {
 
@@ -158,9 +254,16 @@ public class EulerMovementSimulation {
         writer.append(r+"\n");
         writer.append(phi+"\n");
         writer.append("x,y,z,t\n");
-
+        z=10;
         while (pos[2]>=0) {
-            pos = eulerMethod(pos, stepSize, pos[3]);
+            pos[0] = x;
+            pos[1] = y;
+            pos[2] = z;
+            pos[3] = t;
+
+            updateMomentum();
+            updatePosition();
+            t+=stepSize;
             writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
             System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
