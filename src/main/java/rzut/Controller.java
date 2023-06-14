@@ -78,7 +78,7 @@ public class Controller extends MainFrame implements Runnable{
     Canvas can1;
     public static boolean lang = false;
     private Window stage;
-    int choose = 5;
+    int choose = 0;
     FileChooser fileChooser = new FileChooser();
 
     ArrayList<Double> x = new ArrayList<Double>();
@@ -89,6 +89,7 @@ public class Controller extends MainFrame implements Runnable{
     double maxy = 0;
     double maxz = 0;
     boolean czy = false;
+    int type = 0;
 
     public boolean getLang(){
         return lang;
@@ -115,9 +116,9 @@ public class Controller extends MainFrame implements Runnable{
         }
     }
     public void start(ActionEvent e){
+        type = choose;
                 if(!czy){
                     czy = true;
-                    wczytaj();
                     final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
                     ExecutorService exec = Executors.newFixedThreadPool(2);
                     exec.execute(this::run);
@@ -224,6 +225,7 @@ public class Controller extends MainFrame implements Runnable{
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
+        wczytaj();
     }
     public void save(ActionEvent e){
         if(!lang){
@@ -341,25 +343,37 @@ public class Controller extends MainFrame implements Runnable{
         GraphicsContext gc = can1.getGraphicsContext2D();
         int h = (int) can1.getHeight();
         int w = (int) can1.getWidth();
-        gc.setFill(Color.web("#c8c8c8"));
+        gc.setFill(Color.WHITE);
         gc.fillRect(0, 0, w, h);
         gc.setFill(Color.BLUE);
-        if(choose == 0){
+        if(type == 0){
             double res1 = w / maxy;
             double res2 = h / maxz;
             gc.fillOval(res1 * y.get(i), h-res2 * z.get(i), 4, 4);
+            gc.setFill(Color.BLACK);
+            for(int j = 0; j < i; j++){
+                gc.fillOval(res1 * y.get(j), h-res2 * z.get(j), 2, 2);
+            }
         }
-        if(choose == 1){
+        if(type == 1){
             double res1 = w / maxx;
             double res2 = h / maxz;
             gc.fillOval(res1 * x.get(i), h-res2 * z.get(i), 4, 4);
+            gc.setFill(Color.BLACK);
+            for(int j = 0; j < i; j++){
+                gc.fillOval(res1 * x.get(j), h-res2 * z.get(j), 2, 2);
+            }
         }
-        if(choose == 2){
+        if(type == 2){
             double res1 = w / maxx;
             double res2 = h / maxy;
             gc.fillOval(res1 * x.get(i), h-res2 * y.get(i), 4, 4);
+            gc.setFill(Color.BLACK);
+            for(int j = 0; j < i; j++){
+                gc.fillOval(res1 * x.get(j), h-res2 * y.get(j), 2, 2);
+            }
         }
-        if(choose == 3){
+        if(type == 3){
             System.out.println("3D");
         }
     }
@@ -410,7 +424,7 @@ public class Controller extends MainFrame implements Runnable{
             }
             drawShapes(i);
             try {
-                Thread.sleep(500);
+                Thread.sleep(250);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
