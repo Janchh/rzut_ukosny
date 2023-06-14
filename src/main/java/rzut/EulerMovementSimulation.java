@@ -271,6 +271,7 @@ public class EulerMovementSimulation {
         z=hight;
         int ilo = 0;
         pz = Math.cos(phi)*v0;
+        px = Math.sin(phi)*v0;
 
         while (pos[2]>=0) {
             ilo += 1;
