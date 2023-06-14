@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="ślady animacji">
+    <list default="true" id="67297910-1c5d-4d30-8af0-f794a9d25dc2" name="Changes" comment="zakończ obliczenia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rzut/EulerMovementSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rzut/main-frame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686745599749</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="zakończ obliczenia">
+      <created>1686748370420</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686748370420</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +365,7 @@
     <MESSAGE value="getter i setter dla wysokosci poczatkowej, wypisywanie do pliku z wysokoscia - poprawka" />
     <MESSAGE value="animacjia, wątek" />
     <MESSAGE value="ślady animacji" />
-    <option name="LAST_COMMIT_MESSAGE" value="ślady animacji" />
+    <MESSAGE value="zakończ obliczenia" />
+    <option name="LAST_COMMIT_MESSAGE" value="zakończ obliczenia" />
   </component>
 </project>

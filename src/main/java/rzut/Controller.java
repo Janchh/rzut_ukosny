@@ -93,7 +93,7 @@ public class Controller extends MainFrame implements Runnable{
     double maxz = 0;
     double maxx3d = 0;
     double maxy3d = 0;
-    double minsize3d = Math.sqrt(3*620*620);
+    double minsize3d;
     boolean czy = false;
     int type = 0;
 
@@ -377,18 +377,31 @@ public class Controller extends MainFrame implements Runnable{
             }
         }
         if(type == 3){
-            double res1 = h / max(maxx, maxy);
-            gc.fillOval(res1 * x.get(i), h-res1 * y.get(i), 4, 4);
+            double res1 = h / max(maxx3d, maxy3d);
+            System.out.println(x3d.get(i) +" "+ y3d.get(i));
+            double rozm = ((size3d.get(i)-minsize3d)/(maxx*maxx+maxz*maxz-minsize3d))*9+1;
+            gc.fillOval(res1 * x3d.get(i), h-res1 * y3d.get(i), rozm, rozm);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){
-                gc.fillOval(res1 * x.get(j), h-res1 * y.get(j), 2, 2);
+                gc.fillOval(res1 * x3d.get(j), h-res1 * y3d.get(j), 2, 2);
             }
         }
     }
 
     public void wczytaj(){
-
             try (BufferedReader br = new BufferedReader(new FileReader("output.csv"))) {
+                maxx = 0;
+                maxy = 0;
+                maxz = 0;
+                maxx3d = 0;
+                maxy3d = 0;
+                x.clear();
+                y.clear();
+                z.clear();
+                x3d.clear();
+                y3d.clear();
+                size3d.clear();
+
                 String line;
                 for(int i = 0; i < 12; i++){
                     line = br.readLine();
@@ -411,9 +424,17 @@ public class Controller extends MainFrame implements Runnable{
                     maxz = max(tmp3, maxz);
                     tmp = Double.valueOf(val[3]);
                     t.add(tmp);
-                    x3d.add(tmp1+(tmp2-tmp3-tmp1)/2);
-                    y3d.add(tmp2+(tmp2-tmp3-tmp1)/2);
-                    size3d.add(Math.sqrt((tmp1-620)*(tmp1-620)+(tmp2)*(tmp2)));
+                    x3d.add(Math.sqrt(((tmp2+tmp1)/2)*((tmp2+tmp1)/2)+((3*tmp2-tmp1)/2)*((3*tmp2-tmp1)/2)));
+                    y3d.add(tmp3);
+                    maxx3d = max(maxx3d, x3d.get(x3d.size()-1));
+                    maxy3d = max(maxy3d, y3d.get(y3d.size()-1));
+                }
+                int l = x.size();
+                minsize3d = Math.sqrt(maxx*maxx+maxz*maxz);
+                double maks = max(maxx, max(maxy, maxz));
+                for(int i = 0; i < l; i++){
+                    size3d.add(Math.sqrt((x.get(i)-maks)*(x.get(i)-maks)+(y.get(i))*(y.get(i))+(z.get(i)-maks)*(z.get(i)-maks)));
+                    minsize3d = min(minsize3d, size3d.get(size3d.size()-1));
                 }
             }
          catch (IOException ex) {
@@ -423,6 +444,14 @@ public class Controller extends MainFrame implements Runnable{
 
     private double max(double tmp, double maxx) {
         if(tmp > maxx){
+            return tmp;
+        }
+        else{
+            return maxx;
+        }
+    }
+    private double min(double tmp, double maxx) {
+        if(tmp < maxx){
             return tmp;
         }
         else{
