@@ -386,7 +386,7 @@ public class Controller extends MainFrame implements Runnable{
         }
         if(type == 3){
             double res1 = h / max(maxx3d, maxy3d);
-            double rozm = ((size3d.get(i)-minsize3d)/(maxx*maxx+maxz*maxz-minsize3d))*19+1;
+            double rozm = (1-((size3d.get(i)-minsize3d)/(maxx*maxx+maxz*maxz-minsize3d)))*20;
             gc.fillOval(res1 * x3d.get(i), h-res1 * y3d.get(i), rozm, rozm);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){

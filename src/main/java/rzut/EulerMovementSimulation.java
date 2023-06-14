@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -258,10 +259,9 @@ public class EulerMovementSimulation {
     }*/
 
     public void simulate() throws IOException {
-
         // Define simulation parameters
         double[] pos = {0, 0, 0, 0};
-        double stepSize = 0.01;
+        double stepSize = 0.00005;
         /*   int numSteps = getNum_steps();*/
         String fileName = "output.csv";
         FileWriter writer = new FileWriter(fileName);
@@ -293,7 +293,7 @@ public class EulerMovementSimulation {
             updateMomentum();
             updatePosition();
             t+=stepSize;
-            if(ilo % 3 == 0) {
+            if(ilo %1 == 0) {
                 writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
             }
             //System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
