@@ -402,7 +402,7 @@ public class Controller extends MainFrame implements Runnable{
                 maxz = 0;
                 maxx3d = 0;
                 maxy3d = 0;
-                x.clear();
+                x.removeAll(x);
                 y.clear();
                 z.clear();
                 x3d.clear();

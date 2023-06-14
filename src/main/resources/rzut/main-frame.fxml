@@ -57,7 +57,6 @@
                   <ToggleButton mnemonicParsing="false" onAction="#start" text="START/STOP" />
                         <Button fx:id="button1" mnemonicParsing="false" onAction="#save" text="Zapisz trajektorię" />
                         <Button fx:id="otraj" mnemonicParsing="false" onAction="#oblicz" text="Oblicz trajektorię" />
-                  <Button mnemonicParsing="false" onAction="#zakObl" text="Zakończ obliczenia" />
                         <Button fx:id="help" mnemonicParsing="false" onAction="#help" text="?" />
                     </buttons>
                 </ButtonBar>
