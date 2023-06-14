@@ -97,6 +97,11 @@ public class Controller extends MainFrame implements Runnable{
     boolean czy = false;
     int type = 0;
 
+    boolean ifEndCalc = false;
+
+    public boolean getIfEndCalc(){
+      return ifEndCalc;
+    };
     public boolean getLang(){
         return lang;
     }
@@ -221,17 +226,19 @@ public class Controller extends MainFrame implements Runnable{
             throw new NotDoubleException();
         }
 
+        {
+            //symulacja.wypisz();
+            try {
+                symulacja.simulate();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            wczytaj();
 
-        //symulacja.wypisz();
-        try {
-            symulacja.simulate();
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
         }
-        wczytaj();
     }
     public void zakObl(ActionEvent e){
-        System.out.println("test34");
+        ifEndCalc = true;
     }
     public void save(ActionEvent e){
         if(!lang){

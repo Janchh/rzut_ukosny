@@ -57,7 +57,7 @@
                   <ToggleButton mnemonicParsing="false" onAction="#start" text="START/STOP" />
                         <Button fx:id="button1" mnemonicParsing="false" onAction="#save" text="Zapisz trajektorię" />
                         <Button fx:id="otraj" mnemonicParsing="false" onAction="#oblicz" text="Oblicz trajektorię" />
-                  <Button mnemonicParsing="false" onAction="#zakObl" text="Zkończ obliczenia" />
+                  <Button mnemonicParsing="false" onAction="#zakObl" text="Zakończ obliczenia" />
                         <Button fx:id="help" mnemonicParsing="false" onAction="#help" text="?" />
                     </buttons>
                 </ButtonBar>
@@ -85,27 +85,27 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label fx:id="lb2" text="Prędkość początkowa" />
+                                <Label fx:id="lb2" text="Prędkość początkowa [m/s]" />
                                 <TextField fx:id="vPocz" prefHeight="12.0" prefWidth="103.0" text="5" GridPane.columnIndex="1" />
-                                <Label fx:id="lb3" text="Masa" GridPane.rowIndex="1" />
+                                <Label fx:id="lb3" text="Masa [kg]" GridPane.rowIndex="1" />
                                 <TextField fx:id="mass" prefHeight="12.0" prefWidth="103.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label fx:id="lb4" contentDisplay="CENTER" graphicTextGap="7.0" text="Przyspieszenie grawitacyjne" GridPane.rowIndex="2" />
+                                <Label fx:id="lb4" contentDisplay="CENTER" graphicTextGap="7.0" text="Przyspieszenie grawitacyjne [m/s^2]" GridPane.rowIndex="2" />
                                 <TextField fx:id="grav" prefHeight="26.0" prefWidth="44.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                 <Label fx:id="lb5" text="Współczynnik oporu powietrza" GridPane.rowIndex="3" />
                                 <TextField fx:id="res" prefHeight="26.0" prefWidth="50.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                <Label fx:id="lb6" text="Prędkość wiatru" GridPane.rowIndex="4" />
+                                <Label fx:id="lb6" text="Siła wiatru [N]" GridPane.rowIndex="4" />
                                 <TextField fx:id="vwind" prefHeight="12.0" prefWidth="103.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                <Label fx:id="lb7" text="Kierunek wiatru" GridPane.rowIndex="5" />
+                                <Label fx:id="lb7" text="Kierunek wiatru [rad]" GridPane.rowIndex="5" />
                                 <TextField fx:id="dwind" prefHeight="12.0" prefWidth="103.0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                <Label fx:id="lb8" text="Kierunek rzutu" GridPane.rowIndex="6" />
+                                <Label fx:id="lb8" text="Kierunek rzutu [rad]" GridPane.rowIndex="6" />
                                 <TextField fx:id="dthrow" prefHeight="12.0" prefWidth="103.0" text="0.5" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                <Label fx:id="lb9" text="Okres obrotu planety" GridPane.rowIndex="7" />
+                                <Label fx:id="lb9" text="Okres obrotu planety [rad/s]" GridPane.rowIndex="7" />
                                 <TextField fx:id="tim" prefHeight="12.0" prefWidth="103.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                <Label fx:id="lb10" text="Odległość od osi planety" GridPane.rowIndex="8" />
+                                <Label fx:id="lb10" text="Wysokość geograficzna [rad]" GridPane.rowIndex="8" />
                                 <TextField fx:id="radi" prefHeight="12.0" prefWidth="103.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                <Label fx:id="lb11" text="Odchylenie od poziomu" GridPane.rowIndex="9" />
+                                <Label fx:id="lb11" text="Odchylenie od poziomu [rad]" GridPane.rowIndex="9" />
                                 <TextField fx:id="deg" prefHeight="12.0" prefWidth="103.0" text="0.5" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Label fx:id="lb13" text="Wysokość początkowa" GridPane.rowIndex="10" />
+                        <Label fx:id="lb13" text="Wysokość początkowa [m]" GridPane.rowIndex="10" />
                         <TextField fx:id="wys" text="1" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                             </children>
                         </GridPane>

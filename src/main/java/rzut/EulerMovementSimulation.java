@@ -1,5 +1,6 @@
 package rzut;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -127,6 +128,14 @@ public class EulerMovementSimulation {
     public void setNum_steps(double num_steps){
         this.Num_steps = num_steps;
     }*/
+
+    public static boolean ifEnd = false;
+
+    public void setIfEnd(boolean info){this.ifEnd = info;}
+
+    public boolean getIfEnd(){
+        return ifEnd;
+    }
 
     public void wypisz(){
         System.out.println(v0);
@@ -271,8 +280,10 @@ public class EulerMovementSimulation {
         z=hight;
         int ilo = 0;
         pz = Math.cos(phi)*v0;
+        //px = Math.sin(phi)*v0;
 
-        while (pos[2]>=0) {
+        while (pos[2]>=0 && ifEnd == false) {
+            ifEnd = getIfEnd();
             ilo += 1;
             pos[0] = x;
             pos[1] = y;
@@ -285,7 +296,7 @@ public class EulerMovementSimulation {
             if(ilo % 3 == 0) {
                 writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
             }
-            //System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
 
         writer.flush();
