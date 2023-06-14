@@ -85,9 +85,15 @@ public class Controller extends MainFrame implements Runnable{
     ArrayList<Double> y = new ArrayList<Double>();
     ArrayList<Double> z = new ArrayList<Double>();
     ArrayList<Double> t = new ArrayList<Double>();
+    ArrayList<Double> x3d = new ArrayList<Double>();
+    ArrayList<Double> y3d = new ArrayList<Double>();
+    ArrayList<Double> size3d = new ArrayList<Double>();
     double maxx = 0;
     double maxy = 0;
     double maxz = 0;
+    double maxx3d = 0;
+    double maxy3d = 0;
+    double minsize3d = Math.sqrt(3*620*620);
     boolean czy = false;
     int type = 0;
 
@@ -142,9 +148,6 @@ public class Controller extends MainFrame implements Runnable{
                                 "4. Dostosuj perspektywę za pomocą przycisków 'X', 'Y', 'Z', '3D'.\n" +
                                 "Aby uzyskać dodatkową pomoc, zapoznaj się z dokumentacją programu lub skontaktuj się z twórcami.");
         alert.showAndWait().ifPresent(rs -> {
-            if (rs == ButtonType.OK) {
-                System.out.println("Pressed OK.");
-            }
         });}
         else{
         alert.setTitle("Help");
@@ -226,6 +229,9 @@ public class Controller extends MainFrame implements Runnable{
             throw new RuntimeException(ex);
         }
         wczytaj();
+    }
+    public void zakObl(ActionEvent e){
+        System.out.println("test34");
     }
     public void save(ActionEvent e){
         if(!lang){
@@ -347,34 +353,36 @@ public class Controller extends MainFrame implements Runnable{
         gc.fillRect(0, 0, w, h);
         gc.setFill(Color.BLUE);
         if(type == 0){
-            double res1 = w / maxy;
-            double res2 = h / maxz;
-            gc.fillOval(res1 * y.get(i), h-res2 * z.get(i), 4, 4);
+            double res1 = h / max(maxz, maxy);
+            gc.fillOval(res1 * y.get(i), h-res1 * z.get(i), 4, 4);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){
-                gc.fillOval(res1 * y.get(j), h-res2 * z.get(j), 2, 2);
+                gc.fillOval(res1 * y.get(j), h-res1 * z.get(j), 2, 2);
             }
         }
         if(type == 1){
-            double res1 = w / maxx;
-            double res2 = h / maxz;
-            gc.fillOval(res1 * x.get(i), h-res2 * z.get(i), 4, 4);
+            double res1 = h / max(maxz, maxx);
+            gc.fillOval(res1 * x.get(i), h-res1 * z.get(i), 4, 4);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){
-                gc.fillOval(res1 * x.get(j), h-res2 * z.get(j), 2, 2);
+                gc.fillOval(res1 * x.get(j), h-res1 * z.get(j), 2, 2);
             }
         }
         if(type == 2){
-            double res1 = w / maxx;
-            double res2 = h / maxy;
-            gc.fillOval(res1 * x.get(i), h-res2 * y.get(i), 4, 4);
+            double res1 = h / max(maxx, maxy);
+            gc.fillOval(res1 * x.get(i), h-res1 * y.get(i), 4, 4);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){
-                gc.fillOval(res1 * x.get(j), h-res2 * y.get(j), 2, 2);
+                gc.fillOval(res1 * x.get(j), h-res1 * y.get(j), 2, 2);
             }
         }
         if(type == 3){
-            System.out.println("3D");
+            double res1 = h / max(maxx, maxy);
+            gc.fillOval(res1 * x.get(i), h-res1 * y.get(i), 4, 4);
+            gc.setFill(Color.BLACK);
+            for(int j = 0; j < i; j++){
+                gc.fillOval(res1 * x.get(j), h-res1 * y.get(j), 2, 2);
+            }
         }
     }
 
@@ -385,21 +393,27 @@ public class Controller extends MainFrame implements Runnable{
                 for(int i = 0; i < 12; i++){
                     line = br.readLine();
                 }
+                double tmp1;
+                double tmp2;
+                double tmp3;
                 double tmp;
 
                 while ((line = br.readLine()) != null) {
                     String[] val = line.split(",");
-                    tmp = Double.valueOf(val[0]);
-                    x.add(tmp);
-                    maxx = max(tmp, maxx);
-                    tmp = Double.valueOf(val[1]);
-                    y.add(tmp);
-                    maxy = max(tmp, maxy);
-                    tmp = Double.valueOf(val[2]);
-                    z.add(tmp);
-                    maxz = max(tmp, maxz);
+                    tmp1 = Double.valueOf(val[0]);
+                    x.add(tmp1);
+                    maxx = max(tmp1, maxx);
+                    tmp2 = Double.valueOf(val[1]);
+                    y.add(tmp2);
+                    maxy = max(tmp2, maxy);
+                    tmp3 = Double.valueOf(val[2]);
+                    z.add(tmp3);
+                    maxz = max(tmp3, maxz);
                     tmp = Double.valueOf(val[3]);
                     t.add(tmp);
+                    x3d.add(tmp1+(tmp2-tmp3-tmp1)/2);
+                    y3d.add(tmp2+(tmp2-tmp3-tmp1)/2);
+                    size3d.add(Math.sqrt((tmp1-620)*(tmp1-620)+(tmp2)*(tmp2)));
                 }
             }
          catch (IOException ex) {
