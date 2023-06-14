@@ -296,7 +296,7 @@ public class EulerMovementSimulation {
             if(ilo % 3 == 0) {
                 writer.append(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
             }
-            System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
+            //System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
         x=0;
         y=0;

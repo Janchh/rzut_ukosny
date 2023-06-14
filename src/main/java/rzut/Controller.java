@@ -127,6 +127,7 @@ public class Controller extends MainFrame implements Runnable{
         }
     }
     public void start(ActionEvent e){
+        wczytaj();
         type = choose;
                 if(!czy){
                     czy = true;
@@ -233,7 +234,7 @@ public class Controller extends MainFrame implements Runnable{
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-            wczytaj();
+
 
         }
     }
@@ -385,8 +386,7 @@ public class Controller extends MainFrame implements Runnable{
         }
         if(type == 3){
             double res1 = h / max(maxx3d, maxy3d);
-            System.out.println(x3d.get(i) +" "+ y3d.get(i));
-            double rozm = ((size3d.get(i)-minsize3d)/(maxx*maxx+maxz*maxz-minsize3d))*9+1;
+            double rozm = ((size3d.get(i)-minsize3d)/(maxx*maxx+maxz*maxz-minsize3d))*19+1;
             gc.fillOval(res1 * x3d.get(i), h-res1 * y3d.get(i), rozm, rozm);
             gc.setFill(Color.BLACK);
             for(int j = 0; j < i; j++){
