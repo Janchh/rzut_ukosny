@@ -298,7 +298,10 @@ public class EulerMovementSimulation {
             }
             System.out.println(pos[0] + "," + pos[1] + "," + pos[2] + "," + pos[3] + "\n");
         }
-
+        x=0;
+        y=0;
+        z=0;
+        t=0;
         writer.flush();
         writer.close();
 

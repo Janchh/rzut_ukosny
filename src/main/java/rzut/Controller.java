@@ -403,10 +403,10 @@ public class Controller extends MainFrame implements Runnable{
                 maxx3d = 0;
                 maxy3d = 0;
                 x.removeAll(x);
-                y.clear();
-                z.clear();
-                x3d.clear();
-                y3d.clear();
+                y.removeAll(y);
+                z.removeAll(z);
+                x3d.removeAll(x3d);
+                y3d.removeAll(y3d);
                 size3d.clear();
 
                 String line;
