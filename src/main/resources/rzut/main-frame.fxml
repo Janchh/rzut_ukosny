@@ -57,6 +57,7 @@
                   <ToggleButton mnemonicParsing="false" onAction="#start" text="START/STOP" />
                         <Button fx:id="button1" mnemonicParsing="false" onAction="#save" text="Zapisz trajektorię" />
                         <Button fx:id="otraj" mnemonicParsing="false" onAction="#oblicz" text="Oblicz trajektorię" />
+                  <Button mnemonicParsing="false" onAction="#zakObl" text="Zkończ obliczenia" />
                         <Button fx:id="help" mnemonicParsing="false" onAction="#help" text="?" />
                     </buttons>
                 </ButtonBar>
@@ -133,7 +134,7 @@
                 </FlowPane>
             </right>
          <center>
-            <Canvas fx:id="can1" height="614.0" width="609.0" BorderPane.alignment="CENTER" />
+            <Canvas fx:id="can1" height="620.0" width="620.0" BorderPane.alignment="CENTER" />
          </center>
         </BorderPane>
     </children>
